@@ -16,13 +16,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
 import net.silentchaos512.lib.item.ItemSL;
 import net.silentchaos512.sgextraparts.SGExtraParts;
-import net.silentchaos512.sgextraparts.lib.EnumMetalPart;
+import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 
 public class ItemIngot extends ItemSL {
 
   public ItemIngot() {
 
-    super(EnumMetalPart.values().length, SGExtraParts.MOD_ID, "Ingot");
+    super(EnumPartMetal.values().length, SGExtraParts.MOD_ID, "Ingot");
   }
 
   @Override
@@ -49,7 +49,7 @@ public class ItemIngot extends ItemSL {
 
         int meta = stack.getItemDamage();
         meta = MathHelper.clamp_int(meta, 0, subItemCount - 1);
-        return tintIndex == 0 ? EnumMetalPart.values()[meta].getColor() : 0xFFFFFF;
+        return tintIndex == 0 ? EnumPartMetal.values()[meta].getColor() : 0xFFFFFF;
       }
     }, this);
 
@@ -59,7 +59,7 @@ public class ItemIngot extends ItemSL {
   @Override
   public void addOreDict() {
 
-    for (EnumMetalPart metal : EnumMetalPart.values())
+    for (EnumPartMetal metal : EnumPartMetal.values())
       OreDictionary.registerOre(metal.getIngotOreName(), metal.getCraftingStack());
   }
 

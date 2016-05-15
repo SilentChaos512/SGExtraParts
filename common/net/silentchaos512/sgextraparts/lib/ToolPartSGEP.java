@@ -9,27 +9,28 @@ import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.SilentGems;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.lib.EnumPartPosition;
+import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartMain;
 import net.silentchaos512.lib.registry.IRegistryObject;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 
-public class ToolPartMetal extends ToolPartMain {
+public class ToolPartSGEP extends ToolPartMain {
 
-  EnumMetalPart metal;
+  IPartProperties properties;
   Map<String, ModelResourceLocation> modelMap = Maps.newHashMap();
 
-  public ToolPartMetal(EnumMetalPart metal) {
+  public ToolPartSGEP(EnumPartMetal metal) {
 
     super(SGExtraParts.MOD_ID + ":" + metal.name().toLowerCase(), metal.getCraftingStack());
     this.craftingOreDictName = metal.getIngotOreName();
     this.tier = metal.getTier();
-    this.metal = metal;
+    this.properties = metal;
   }
 
   @Override
   public int getColor() {
 
-    return metal.getColor();
+    return properties.getColor();
   }
 
   @Override
@@ -38,7 +39,7 @@ public class ToolPartMetal extends ToolPartMain {
     if (stack.hasDisplayName())
       return stack.getDisplayName();
 
-    return metal.getName();
+    return properties.getName();
   }
 
   @Override
@@ -76,13 +77,13 @@ public class ToolPartMetal extends ToolPartMain {
   @Override
   public int getDurability() {
 
-    return metal.getDurability();
+    return properties.getDurability();
   }
 
   @Override
   public float getHarvestSpeed() {
 
-    return metal.getMiningSpeed();
+    return properties.getMiningSpeed();
   }
 
   @Override
@@ -103,31 +104,31 @@ public class ToolPartMetal extends ToolPartMain {
   @Override
   public float getMeleeDamage() {
 
-    return metal.getMeleeDamage();
+    return properties.getMeleeDamage();
   }
 
   @Override
   public float getMagicDamage() {
 
-    return metal.getMagicDamage();
+    return properties.getMagicDamage();
   }
 
   @Override
   public int getEnchantability() {
 
-    return metal.getEnchantability();
+    return properties.getEnchantability();
   }
 
   @Override
   public float getMeleeSpeed() {
 
-    return metal.getMeleeSpeed();
+    return properties.getMeleeSpeed();
   }
 
   @Override
   public float getChargeSpeed() {
 
-    return metal.getChargeSpeed();
+    return properties.getChargeSpeed();
   }
 
   @Override

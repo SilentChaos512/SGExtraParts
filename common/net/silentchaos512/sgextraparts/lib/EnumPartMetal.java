@@ -3,10 +3,11 @@ package net.silentchaos512.sgextraparts.lib;
 import lombok.Getter;
 import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
+import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
 import net.silentchaos512.sgextraparts.item.ModItems;
 
-public enum EnumMetalPart {
+public enum EnumPartMetal implements IPartProperties {
 
   //@formatter:off
   COPPER      ("Copper",        EnumMaterialTier.MUNDANE, 0xFF8000,  175,  4.0f, 0.5f, 1.5f, 1.2f,  5, 12, 2.0f),
@@ -40,7 +41,7 @@ public enum EnumMetalPart {
   @Getter final int protection;
   //@formatter:on
 
-  private EnumMetalPart(String name, EnumMaterialTier tier, int color, int durability,
+  private EnumPartMetal(String name, EnumMaterialTier tier, int color, int durability,
       float miningSpeed, float meleeDamage, float magicDamage, float meleeSpeed, int protection,
       int enchantability, float chargeSpeed) {
 
@@ -69,8 +70,8 @@ public enum EnumMetalPart {
 
   public static void registerToolParts() {
 
-    for (EnumMetalPart metal : values()) {
-      ToolPartRegistry.putPart(new ToolPartMetal(metal));
+    for (EnumPartMetal metal : values()) {
+      ToolPartRegistry.putPart(new ToolPartSGEP(metal));
     }
   }
 }

@@ -12,7 +12,7 @@ import net.silentchaos512.lib.registry.SRegistry;
 import net.silentchaos512.lib.util.LocalizationHelper;
 import net.silentchaos512.lib.util.LogHelper;
 import net.silentchaos512.sgextraparts.item.ModItems;
-import net.silentchaos512.sgextraparts.lib.EnumMetalPart;
+import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 
 //@formatter:off
 @Mod(modid = SGExtraParts.MOD_ID,
@@ -53,7 +53,7 @@ public class SGExtraParts {
   @EventHandler
   public void init(FMLInitializationEvent event) {
 
-    EnumMetalPart.registerToolParts();
+    EnumPartMetal.registerToolParts();
     proxy.init(registry);
   }
 
