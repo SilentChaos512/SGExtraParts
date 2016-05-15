@@ -1,0 +1,11 @@
+[
+{
+  "modid": "SGExtraParts",
+  "name": "Silent's Gems: Extra Parts",
+  "description": "Official tool part add-on pack for Silent's Gems",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "authors": [ "SilentChaos512" ]
+}
+]
