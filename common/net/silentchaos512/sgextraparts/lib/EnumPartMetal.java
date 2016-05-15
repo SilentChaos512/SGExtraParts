@@ -58,12 +58,14 @@ public enum EnumPartMetal implements IPartProperties {
     this.protection = protection;
   }
 
+  @Override
   public ItemStack getCraftingStack() {
 
     return new ItemStack(ModItems.ingot, 1, ordinal());
   }
 
-  public String getIngotOreName() {
+  @Override
+  public String getCraftingOreName() {
 
     return "ingot" + name;
   }

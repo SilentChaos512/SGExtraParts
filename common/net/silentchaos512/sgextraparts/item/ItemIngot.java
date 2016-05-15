@@ -60,7 +60,7 @@ public class ItemIngot extends ItemSL {
   public void addOreDict() {
 
     for (EnumPartMetal metal : EnumPartMetal.values())
-      OreDictionary.registerOre(metal.getIngotOreName(), metal.getCraftingStack());
+      OreDictionary.registerOre(metal.getCraftingOreName(), metal.getCraftingStack());
   }
 
   @Override

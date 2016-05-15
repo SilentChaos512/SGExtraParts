@@ -19,12 +19,12 @@ public class ToolPartSGEP extends ToolPartMain {
   IPartProperties properties;
   Map<String, ModelResourceLocation> modelMap = Maps.newHashMap();
 
-  public ToolPartSGEP(EnumPartMetal metal) {
+  public ToolPartSGEP(IPartProperties prop) {
 
-    super(SGExtraParts.MOD_ID + ":" + metal.name().toLowerCase(), metal.getCraftingStack());
-    this.craftingOreDictName = metal.getIngotOreName();
-    this.tier = metal.getTier();
-    this.properties = metal;
+    super(SGExtraParts.MOD_ID + ":" + prop.getName().toLowerCase(), prop.getCraftingStack());
+    this.craftingOreDictName = prop.getCraftingOreName();
+    this.tier = prop.getTier();
+    this.properties = prop;
   }
 
   @Override

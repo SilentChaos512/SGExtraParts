@@ -1,5 +1,6 @@
 package net.silentchaos512.sgextraparts;
 
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -12,6 +13,7 @@ import net.silentchaos512.lib.registry.SRegistry;
 import net.silentchaos512.lib.util.LocalizationHelper;
 import net.silentchaos512.lib.util.LogHelper;
 import net.silentchaos512.sgextraparts.item.ModItems;
+import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 
 //@formatter:off
@@ -54,6 +56,8 @@ public class SGExtraParts {
   public void init(FMLInitializationEvent event) {
 
     EnumPartMetal.registerToolParts();
+    if (Loader.isModLoaded("ea"))
+      EnumPartEbonArts.registerToolParts();
     proxy.init(registry);
   }
 
