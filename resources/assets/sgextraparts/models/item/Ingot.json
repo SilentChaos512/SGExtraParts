@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "SGExtraParts:items/Ingot0",
+    "layer1": "SGExtraParts:items/Ingot1"
+  }
+}

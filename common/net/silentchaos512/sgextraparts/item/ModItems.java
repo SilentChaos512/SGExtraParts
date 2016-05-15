@@ -7,8 +7,7 @@ import net.silentchaos512.sgextraparts.lib.EnumMetalPart;
 
 public class ModItems {
 
-  public static ItemSL ingot = new ItemSL(EnumMetalPart.values().length, SGExtraParts.MOD_ID,
-      "Ingot");
+  public static ItemIngot ingot = new ItemIngot();
 
   public static void init(SRegistry reg) {
 

@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.silentchaos512.lib.SilentLib;
 import net.silentchaos512.lib.registry.SRegistry;
 import net.silentchaos512.lib.util.LocalizationHelper;
 import net.silentchaos512.lib.util.LogHelper;
@@ -40,6 +41,9 @@ public class SGExtraParts {
 
   @EventHandler
   public void preInit(FMLPreInitializationEvent event) {
+
+    localizationHelper = new LocalizationHelper(MOD_ID).setReplaceAmpersand(true);
+    SilentLib.instance.registerLocalizationHelperForMod(MOD_ID, localizationHelper);
 
     ModItems.init(registry);
 
