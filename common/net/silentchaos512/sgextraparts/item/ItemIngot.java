@@ -11,8 +11,8 @@ import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import net.silentchaos512.lib.item.ItemSL;
 import net.silentchaos512.sgextraparts.SGExtraParts;
@@ -32,6 +32,7 @@ public class ItemIngot extends ItemSL {
         new ModelResourceLocation(SGExtraParts.RESOURCE_PREFIX + "Ingot", "inventory"));
   }
 
+  @SideOnly(Side.CLIENT)
   @Override
   public boolean registerModels() {
 

@@ -55,6 +55,19 @@ public enum EnumPartEbonArts implements IPartProperties {
     return "";
   }
 
+  @Override
+  public int getHarvestLevel() {
+
+    //@formatter:off
+    switch (tier) {
+      case MUNDANE: return 1;
+      case REGULAR: return 2;
+      case SUPER: return 3;
+      default: return 0;
+    }
+    //@formatter:on
+  }
+
   public static void registerToolParts() {
 
     for (EnumPartEbonArts prop : values())

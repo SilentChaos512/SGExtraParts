@@ -70,6 +70,19 @@ public enum EnumPartMetal implements IPartProperties {
     return "ingot" + name;
   }
 
+  @Override
+  public int getHarvestLevel() {
+
+    //@formatter:off
+    switch (tier) {
+      case MUNDANE: return 1;
+      case REGULAR: return 2;
+      case SUPER: return 4;
+      default: return 0;
+    }
+    //@formatter:on
+  }
+
   public static void registerToolParts() {
 
     for (EnumPartMetal metal : values()) {
