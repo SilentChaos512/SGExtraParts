@@ -10,8 +10,8 @@ import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
 public enum EnumPartEbonArts implements IPartProperties {
 
   // @formatter:off
-  ARCANITE("Arcanite", EnumMaterialTier.REGULAR, 0x4DC6C3,  315, 6.5f, 2.5f, 2.5f, 1.0f,  6, 15, 2.0f),
-  KATCHEEN("Katcheen", EnumMaterialTier.SUPER,   0xDC4242, 1600, 8.5f, 4.0f, 4.0f, 1.0f, 10, 20, 2.0f);
+  ARCANITE("Arcanite", EnumMaterialTier.REGULAR, 0x4DC6C3,  315, 6.5f, 2.5f, 2.5f, 1.0f, 16, 15, 2.0f),
+  KATCHEEN("Katcheen", EnumMaterialTier.SUPER,   0xDC4242, 1600, 8.5f, 4.0f, 4.0f, 1.0f, 22, 20, 2.0f);
 
   @Getter final String name;
   @Getter final int color;
@@ -23,7 +23,7 @@ public enum EnumPartEbonArts implements IPartProperties {
   @Getter final float meleeSpeed;
   @Getter final int enchantability;
   @Getter final float chargeSpeed;
-  @Getter final int protection;
+  @Getter final float protection;
   //@formatter:on
 
   private EnumPartEbonArts(String name, EnumMaterialTier tier, int color, int durability,
@@ -41,6 +41,12 @@ public enum EnumPartEbonArts implements IPartProperties {
     this.enchantability = enchantability;
     this.chargeSpeed = chargeSpeed;
     this.protection = protection;
+  }
+
+  @Override
+  public String getNamePrefix() {
+
+    return "";
   }
 
   @Override

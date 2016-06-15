@@ -16,3 +16,10 @@ item.sgextraparts:Ingot14.name=Electrum Ingot
 item.sgextraparts:Ingot15.name=Enderium Ingot
 item.sgextraparts:Ingot16.name=Prismarinium Ingot
 item.sgextraparts:Ingot.desc=This ingot is normally not craftable.
+
+item.sgextraparts:ReinforcedObsidian.name=Reinforced Obsidian
+
+part.sgextraparts:ReinforcedObsidian.name=Obsidian
+part.sgextraparts:ReinforcedObsidian.prefix=Reinforced
+part.sgextraparts:CrystallizedChaos.name=Crystallized Chaos
+part.sgextraparts:CrystallizedChaos.prefix=

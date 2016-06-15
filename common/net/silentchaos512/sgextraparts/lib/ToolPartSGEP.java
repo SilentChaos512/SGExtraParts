@@ -28,7 +28,7 @@ public class ToolPartSGEP extends ToolPartMain {
   }
 
   @Override
-  public int getColor() {
+  public int getColor(ItemStack toolOrArmor) {
 
     return properties.getColor();
   }
@@ -40,6 +40,12 @@ public class ToolPartSGEP extends ToolPartMain {
       return stack.getDisplayName();
 
     return properties.getName();
+  }
+
+  @Override
+  public String getDisplayNamePrefix(ItemStack partRep) {
+
+    return properties.getNamePrefix();
   }
 
   @Override
@@ -89,16 +95,7 @@ public class ToolPartSGEP extends ToolPartMain {
   @Override
   public int getHarvestLevel() {
 
-    switch (tier) {
-      case MUNDANE:
-        return 1;
-      case REGULAR:
-        return 2;
-      case SUPER:
-        return 4;
-      default:
-        return 0;
-    }
+    return properties.getHarvestLevel();
   }
 
   @Override
@@ -129,6 +126,12 @@ public class ToolPartSGEP extends ToolPartMain {
   public float getChargeSpeed() {
 
     return properties.getChargeSpeed();
+  }
+
+  @Override
+  public float getProtection() {
+
+    return properties.getProtection();
   }
 
   @Override

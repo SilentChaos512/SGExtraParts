@@ -8,9 +8,11 @@ import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 public class ModItems {
 
   public static ItemIngot ingot = new ItemIngot();
+  public static ItemGeneric generic = new ItemGeneric();
 
   public static void init(SRegistry reg) {
 
     reg.registerItem(ingot);
+    reg.registerItem(generic);
   }
 }

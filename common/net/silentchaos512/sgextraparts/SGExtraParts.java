@@ -14,6 +14,7 @@ import net.silentchaos512.lib.util.LocalizationHelper;
 import net.silentchaos512.lib.util.LogHelper;
 import net.silentchaos512.sgextraparts.item.ModItems;
 import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
+import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 
 //@formatter:off
@@ -30,10 +31,10 @@ public class SGExtraParts {
   public static final String DEPENDENCIES = "required-after:Forge@[12.16.1.1904,);required-after:SilentGems;";
   public static final String RESOURCE_PREFIX = MOD_ID.toLowerCase() + ":";
 
-  public LogHelper logHelper = new LogHelper(MOD_NAME);
-  public LocalizationHelper localizationHelper;
+  public static LogHelper logHelper = new LogHelper(MOD_NAME);
+  public static LocalizationHelper localizationHelper;
 
-  public SRegistry registry = new SRegistry(MOD_ID);
+  public static SRegistry registry = new SRegistry(MOD_ID);
 
   @Instance(MOD_ID)
   public static SGExtraParts instance;
@@ -56,6 +57,7 @@ public class SGExtraParts {
   public void init(FMLInitializationEvent event) {
 
     EnumPartMetal.registerToolParts();
+    EnumPartExtreme.registerToolParts();
     if (Loader.isModLoaded("ea"))
       EnumPartEbonArts.registerToolParts();
     proxy.init(registry);
