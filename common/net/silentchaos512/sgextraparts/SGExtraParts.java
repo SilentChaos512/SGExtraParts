@@ -14,6 +14,7 @@ import net.silentchaos512.lib.util.LocalizationHelper;
 import net.silentchaos512.lib.util.LogHelper;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.item.ModItems;
+import net.silentchaos512.sgextraparts.lib.EnumPartBotania;
 import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
 import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
@@ -62,6 +63,8 @@ public class SGExtraParts {
     EnumPartExtreme.registerToolParts();
     if (Loader.isModLoaded("ea"))
       EnumPartEbonArts.registerToolParts();
+    if (Loader.isModLoaded("Botania"))
+      EnumPartBotania.registerToolParts();
 
     ConfigExtraParts.save();
 
