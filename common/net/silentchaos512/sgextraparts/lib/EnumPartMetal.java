@@ -1,10 +1,15 @@
 package net.silentchaos512.sgextraparts.lib;
 
+import java.util.List;
+
+import com.google.common.collect.Lists;
+
 import lombok.Getter;
 import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
+import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.item.ModItems;
 
 public enum EnumPartMetal implements IPartProperties {
@@ -91,8 +96,16 @@ public enum EnumPartMetal implements IPartProperties {
 
   public static void registerToolParts() {
 
+    List<String> names = Lists.newArrayList();
+    for (EnumPartMetal part : values())
+      names.add(part.name.toLowerCase());
+
+    boolean[] enabled = ConfigExtraParts.loadPartModule("metals",
+        names.toArray(new String[names.size()]), values());
+
     for (EnumPartMetal metal : values()) {
-      ToolPartRegistry.putPart(new ToolPartSGEP(metal));
+      if (enabled[metal.ordinal()])
+        ToolPartRegistry.putPart(new ToolPartSGEP(metal));
     }
   }
 }

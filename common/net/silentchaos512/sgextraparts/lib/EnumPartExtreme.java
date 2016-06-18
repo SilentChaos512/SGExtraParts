@@ -1,11 +1,16 @@
 package net.silentchaos512.sgextraparts.lib;
 
+import java.util.List;
+
+import com.google.common.collect.Lists;
+
 import lombok.Getter;
 import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
 import net.silentchaos512.sgextraparts.SGExtraParts;
+import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.item.ModItems;
 
 public enum EnumPartExtreme implements IPartProperties {
@@ -80,7 +85,15 @@ public enum EnumPartExtreme implements IPartProperties {
 
   public static void registerToolParts() {
 
+    List<String> names = Lists.newArrayList();
     for (EnumPartExtreme part : values())
-      ToolPartRegistry.putPart(new ToolPartSGEP(part));
+      names.add(part.name.toLowerCase());
+
+    boolean[] enabled = ConfigExtraParts.loadPartModule("extreme_parts",
+        names.toArray(new String[names.size()]), values());
+
+    for (EnumPartExtreme part : values())
+      if (enabled[part.ordinal()])
+        ToolPartRegistry.putPart(new ToolPartSGEP(part));
   }
 }

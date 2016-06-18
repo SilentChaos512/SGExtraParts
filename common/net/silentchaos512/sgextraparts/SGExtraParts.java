@@ -12,6 +12,7 @@ import net.silentchaos512.lib.SilentLib;
 import net.silentchaos512.lib.registry.SRegistry;
 import net.silentchaos512.lib.util.LocalizationHelper;
 import net.silentchaos512.lib.util.LogHelper;
+import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.item.ModItems;
 import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
 import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
@@ -48,6 +49,7 @@ public class SGExtraParts {
     localizationHelper = new LocalizationHelper(MOD_ID).setReplaceAmpersand(true);
     SilentLib.instance.registerLocalizationHelperForMod(MOD_ID, localizationHelper);
 
+    ConfigExtraParts.init(event.getSuggestedConfigurationFile());
     ModItems.init(registry);
 
     proxy.preInit(registry);
@@ -60,6 +62,9 @@ public class SGExtraParts {
     EnumPartExtreme.registerToolParts();
     if (Loader.isModLoaded("ea"))
       EnumPartEbonArts.registerToolParts();
+
+    ConfigExtraParts.save();
+
     proxy.init(registry);
   }
 
