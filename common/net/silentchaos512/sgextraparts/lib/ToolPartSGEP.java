@@ -5,12 +5,14 @@ import java.util.Map;
 import com.google.common.collect.Maps;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.SilentGems;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.lib.EnumPartPosition;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartMain;
+import net.silentchaos512.gems.item.tool.ItemGemBow;
 import net.silentchaos512.lib.registry.IRegistryObject;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 
@@ -49,23 +51,25 @@ public class ToolPartSGEP extends ToolPartMain {
   }
 
   @Override
-  public ModelResourceLocation getModel(ItemStack tool, EnumPartPosition pos) {
+  public ModelResourceLocation getModel(ItemStack tool, EnumPartPosition pos, int frame) {
 
-    String name = ((IRegistryObject) tool.getItem()).getName();
+    Item item = tool.getItem();
+    String name = ((IRegistryObject) item).getName();
     name = SilentGems.MOD_ID + ":" + name.toLowerCase() + "/" + name;
+    String num = item instanceof ItemGemBow ? "" : "15";
 
     switch (pos) {
       case HEAD_MIDDLE:
-        name += "15";
+        name += num;
         break;
       case HEAD_LEFT:
-        name += "15L";
+        name += num + "L";
         break;
       case HEAD_RIGHT:
-        name += "15R";
+        name += num + "R";
         break;
       case ROD_DECO:
-        name += "Deco15";
+        name += "Deco" + num;
         break;
       default:
         return null;
