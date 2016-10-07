@@ -1,3 +1,12 @@
+1.1.0
+Fixed: All parts being invisible.
+
+1.0.3
+Added: Botania parts (manasteel, elementium, and terrasteel)
+
+1.0.2?
+Added: The extreme parts (crystallized chaos essence, reinforced obsidian)
+
 1.0.0
 Added: Metal main parts (based on Fun Ores at the moment)
 Added: Arcanite and Katcheen main parts (Ebon Arts)
