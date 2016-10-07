@@ -20,7 +20,7 @@ import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 
 //@formatter:off
-@Mod(modid = SGExtraParts.MOD_ID,
+@Mod(modid = SGExtraParts.MOD_ID_LOWER,
     name = SGExtraParts.MOD_NAME,
     version = SGExtraParts.VERSION,
     dependencies = SGExtraParts.DEPENDENCIES)
@@ -28,6 +28,7 @@ import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 public class SGExtraParts {
 
   public static final String MOD_ID = "SGExtraParts";
+  public static final String MOD_ID_LOWER = "sgextraparts";
   public static final String MOD_NAME = "Silent's Gems: Extra Parts";
   public static final String VERSION = "@VERSION@";
   public static final String DEPENDENCIES = "required-after:Forge@[12.16.1.1904,);required-after:SilentGems;";
@@ -38,7 +39,7 @@ public class SGExtraParts {
 
   public static SRegistry registry = new SRegistry(MOD_ID);
 
-  @Instance(MOD_ID)
+  @Instance(MOD_ID_LOWER)
   public static SGExtraParts instance;
 
   @SidedProxy(clientSide = "net.silentchaos512.lib.proxy.ClientProxy", serverSide = "net.silentchaos512.lib.proxy.CommonProxy")
