@@ -18,6 +18,7 @@ import net.silentchaos512.sgextraparts.lib.EnumPartBotania;
 import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
 import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
+import net.silentchaos512.sgextraparts.lib.EnumPartVanillaBasic;
 
 //@formatter:off
 @Mod(modid = SGExtraParts.MOD_ID_LOWER,
@@ -60,6 +61,7 @@ public class SGExtraParts {
   @EventHandler
   public void init(FMLInitializationEvent event) {
 
+    EnumPartVanillaBasic.registerToolParts();
     EnumPartMetal.registerToolParts();
     EnumPartExtreme.registerToolParts();
     if (Loader.isModLoaded("ea"))

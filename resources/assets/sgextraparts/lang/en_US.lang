@@ -18,6 +18,14 @@ item.sgextraparts:Ingot16.name=Prismarinium Ingot
 item.sgextraparts:Ingot.desc=This ingot is normally not craftable.
 
 item.sgextraparts:ReinforcedObsidian.name=Reinforced Obsidian
+item.sgextraparts:polished_wood.name=Polished Wood
+item.sgextraparts:polished_oak.name=Polished Oak
+item.sgextraparts:polished_birch.name=Polished Birch
+item.sgextraparts:polished_spruce.name=Polished Spruce
+item.sgextraparts:polished_jungle.name=Polished Jungle
+item.sgextraparts:polished_dark_oak.name=Polished Dark Oak
+item.sgextraparts:polished_acacia.name=Polished Acacia
+item.sgextraparts:polished_stone.name=Polished Stone
 
 part.sgextraparts:ReinforcedObsidian.name=Obsidian
 part.sgextraparts:ReinforcedObsidian.prefix=Reinforced
@@ -27,3 +35,13 @@ part.sgextraparts:CrystallizedChaos.prefix=
 part.sgextraparts:Manasteel.name=Manasteel
 part.sgextraparts:Elementium.name=Elementium
 part.sgextraparts:Terrasteel.name=Terrasteel
+
+part.sgextraparts:acacia.name=Acacia
+part.sgextraparts:birch.name=Birch
+part.sgextraparts:dark_oak.name=Dark Oak
+part.sgextraparts:jungle.name=Jungle
+part.sgextraparts:oak.name=Oak
+part.sgextraparts:spruce.name=Spruce
+part.sgextraparts:wood.name=Wood
+part.sgextraparts:stone.name=Stone
+part.sgextraparts:polished.prefix=Polished

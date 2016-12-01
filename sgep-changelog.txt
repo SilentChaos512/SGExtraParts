@@ -1,3 +1,11 @@
+1.2.0
+Added: Polished wood. It's slightly more durable than vanilla wood with a faster swing speed. Can be crafted from wooden slabs. Comes in oak, birch, spruce, jungle, dark oak, and acacia varieties, as well as a generic "wood" version that can be crafted from any other ore dictionary wooden slabs.
+Added: Polished stone. It's slight more durable than vanilla stone with a slower swing speed. Can be crafted from cobblestone slabs.
+Note: The new "polished" tool parts are new items as well! I didn't want to override vanilla tool recipes... Search for "polished oak", "polished stone", etc.
+
+1.1.1
+Updated for Silent Lib 1.1.0
+
 1.1.0
 Fixed: All parts being invisible.
 
