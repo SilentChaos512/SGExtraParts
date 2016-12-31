@@ -55,12 +55,6 @@ public class SGExtraParts {
     ConfigExtraParts.init(event.getSuggestedConfigurationFile());
     ModItems.init(registry);
 
-    proxy.preInit(registry);
-  }
-
-  @EventHandler
-  public void init(FMLInitializationEvent event) {
-
     EnumPartVanillaBasic.registerToolParts();
     EnumPartMetal.registerToolParts();
     EnumPartExtreme.registerToolParts();
@@ -68,6 +62,12 @@ public class SGExtraParts {
       EnumPartEbonArts.registerToolParts();
     if (Loader.isModLoaded("Botania"))
       EnumPartBotania.registerToolParts();
+
+    proxy.preInit(registry);
+  }
+
+  @EventHandler
+  public void init(FMLInitializationEvent event) {
 
     ConfigExtraParts.save();
 

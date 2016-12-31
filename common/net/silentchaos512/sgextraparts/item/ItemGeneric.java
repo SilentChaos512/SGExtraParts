@@ -50,15 +50,22 @@ public class ItemGeneric extends ItemNamedSubtypesSorted {
         .addRecipe(new ShapedOreRecipe(reinforcedObsidian, "oco", "coc", "oco", 'o', "obsidian",
             'c', net.silentchaos512.gems.item.ModItems.craftingMaterial.chaosEssenceEnriched));
 
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedOak, "www", 'w', "slabWoodOak"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedBirch, "www", 'w', "slabWoodBirch"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedSpruce, "www", 'w', "slabWoodSpruce"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedJungle, "www", 'w', "slabWoodJungle"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedDarkOak, "www", 'w', "slabWoodDarkOak"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedAcacia, "www", 'w', "slabWoodAcacia"));
+    addRecipePolishedItem(polishedOak, "slabWoodOak");
+    addRecipePolishedItem(polishedBirch, "slabWoodBirch");
+    addRecipePolishedItem(polishedSpruce, "slabWoodSpruce");
+    addRecipePolishedItem(polishedJungle, "slabWoodJungle");
+    addRecipePolishedItem(polishedDarkOak, "slabWoodDarkOak");
+    addRecipePolishedItem(polishedAcacia, "slabWoodAcacia");
 
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedWood, "www", 'w', "slabWood"));
+    addRecipePolishedItem(polishedWood, "slabWood");
 
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedStone, "sss", 's', "slabCobblestone"));
+    addRecipePolishedItem(polishedStone, "slabCobblestone");
+  }
+
+  private void addRecipePolishedItem(ItemStack output, String input) {
+
+    ItemStack result = output.copy();
+    result.stackSize = 2;
+    GameRegistry.addRecipe(new ShapedOreRecipe(result, "www", "www", 'w', input));
   }
 }

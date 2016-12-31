@@ -1,3 +1,7 @@
+1.2.1
+Added: Cobalt, ardite, and manyullyn to metal parts.
+Changed: Polished wood/stone recipes now take two rows of slabs to make two pieces (wood was conflicting with TCon drying racks)
+
 1.2.0
 Added: Polished wood. It's slightly more durable than vanilla wood with a faster swing speed. Can be crafted from wooden slabs. Comes in oak, birch, spruce, jungle, dark oak, and acacia varieties, as well as a generic "wood" version that can be crafted from any other ore dictionary wooden slabs.
 Added: Polished stone. It's slight more durable than vanilla stone with a slower swing speed. Can be crafted from cobblestone slabs.
