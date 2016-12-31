@@ -21,26 +21,25 @@ import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 import net.silentchaos512.sgextraparts.lib.EnumPartVanillaBasic;
 
 //@formatter:off
-@Mod(modid = SGExtraParts.MOD_ID_LOWER,
+@Mod(modid = SGExtraParts.MOD_ID,
     name = SGExtraParts.MOD_NAME,
     version = SGExtraParts.VERSION,
     dependencies = SGExtraParts.DEPENDENCIES)
 //@formatter:on
 public class SGExtraParts {
 
-  public static final String MOD_ID = "SGExtraParts";
-  public static final String MOD_ID_LOWER = "sgextraparts";
+  public static final String MOD_ID = "sgextraparts";
   public static final String MOD_NAME = "Silent's Gems: Extra Parts";
   public static final String VERSION = "@VERSION@";
-  public static final String DEPENDENCIES = "required-after:Forge@[12.16.1.1904,);required-after:SilentGems;";
-  public static final String RESOURCE_PREFIX = MOD_ID.toLowerCase() + ":";
+  public static final String DEPENDENCIES = "required-after:forge@[12.16.1.1904,);required-after:silentgems;";
+  public static final String RESOURCE_PREFIX = MOD_ID+ ":";
 
   public static LogHelper logHelper = new LogHelper(MOD_NAME);
   public static LocalizationHelper localizationHelper;
 
   public static SRegistry registry = new SRegistry(MOD_ID);
 
-  @Instance(MOD_ID_LOWER)
+  @Instance(MOD_ID)
   public static SGExtraParts instance;
 
   @SidedProxy(clientSide = "net.silentchaos512.lib.proxy.ClientProxy", serverSide = "net.silentchaos512.lib.proxy.CommonProxy")
@@ -55,12 +54,6 @@ public class SGExtraParts {
     ConfigExtraParts.init(event.getSuggestedConfigurationFile());
     ModItems.init(registry);
 
-    proxy.preInit(registry);
-  }
-
-  @EventHandler
-  public void init(FMLInitializationEvent event) {
-
     EnumPartVanillaBasic.registerToolParts();
     EnumPartMetal.registerToolParts();
     EnumPartExtreme.registerToolParts();
@@ -68,6 +61,12 @@ public class SGExtraParts {
       EnumPartEbonArts.registerToolParts();
     if (Loader.isModLoaded("Botania"))
       EnumPartBotania.registerToolParts();
+
+    proxy.preInit(registry);
+  }
+
+  @EventHandler
+  public void init(FMLInitializationEvent event) {
 
     ConfigExtraParts.save();
 

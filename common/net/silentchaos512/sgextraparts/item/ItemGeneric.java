@@ -1,5 +1,6 @@
 package net.silentchaos512.sgextraparts.item;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -19,13 +20,13 @@ public class ItemGeneric extends ItemNamedSubtypesSorted {
   public static final String NAME_POLISHED_STONE = "polished_stone";
 
   public static final String[] NAMES = {//
-      NAME_REINFORCED_OBSIDIAN, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_BIRCH,
-      NAME_POLISHED_SPRUCE, NAME_POLISHED_JUNGLE, NAME_POLISHED_DARK_OAK, NAME_POLISHED_ACACIA,
+      NAME_REINFORCED_OBSIDIAN, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE,
+      NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA, NAME_POLISHED_DARK_OAK,
       NAME_POLISHED_STONE };
 
   public static final String[] SORTED_NAMES = {//
-      NAME_REINFORCED_OBSIDIAN, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_BIRCH,
-      NAME_POLISHED_SPRUCE, NAME_POLISHED_JUNGLE, NAME_POLISHED_DARK_OAK, NAME_POLISHED_ACACIA,
+      NAME_REINFORCED_OBSIDIAN, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE,
+      NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA, NAME_POLISHED_DARK_OAK,
       NAME_POLISHED_STONE };
 
   public final ItemStack reinforcedObsidian = getStack(NAME_REINFORCED_OBSIDIAN);
@@ -50,15 +51,22 @@ public class ItemGeneric extends ItemNamedSubtypesSorted {
         .addRecipe(new ShapedOreRecipe(reinforcedObsidian, "oco", "coc", "oco", 'o', "obsidian",
             'c', net.silentchaos512.gems.item.ModItems.craftingMaterial.chaosEssenceEnriched));
 
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedOak, "www", 'w', "slabWoodOak"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedBirch, "www", 'w', "slabWoodBirch"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedSpruce, "www", 'w', "slabWoodSpruce"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedJungle, "www", 'w', "slabWoodJungle"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedDarkOak, "www", 'w', "slabWoodDarkOak"));
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedAcacia, "www", 'w', "slabWoodAcacia"));
+    addRecipePolishedItem(polishedOak, new ItemStack(Blocks.WOODEN_SLAB, 1, 0));
+    addRecipePolishedItem(polishedSpruce, new ItemStack(Blocks.WOODEN_SLAB, 1, 1));
+    addRecipePolishedItem(polishedBirch, new ItemStack(Blocks.WOODEN_SLAB, 1, 2));
+    addRecipePolishedItem(polishedJungle, new ItemStack(Blocks.WOODEN_SLAB, 1, 3));
+    addRecipePolishedItem(polishedAcacia, new ItemStack(Blocks.WOODEN_SLAB, 1, 4));
+    addRecipePolishedItem(polishedDarkOak, new ItemStack(Blocks.WOODEN_SLAB, 1, 5));
 
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedWood, "www", 'w', "slabWood"));
+    addRecipePolishedItem(polishedWood, "slabWood");
 
-    GameRegistry.addRecipe(new ShapedOreRecipe(polishedStone, "sss", 's', "slabCobblestone"));
+    addRecipePolishedItem(polishedStone, new ItemStack(Blocks.STONE_SLAB, 1, 3));
+  }
+
+  private void addRecipePolishedItem(ItemStack output, Object input) {
+
+    ItemStack result = output.copy();
+    result.setCount(2);
+    GameRegistry.addRecipe(new ShapedOreRecipe(result, "www", "www", 'w', input));
   }
 }

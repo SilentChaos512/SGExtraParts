@@ -1,3 +1,13 @@
+1.2.1 (MC 1.11)
+Updated for Silent's Gems 2.2.2
+Fixed: Polished stone and most types of polished wood not being craftable in some cases.
+Fixed: Some models/textures not loading.
+Fixed: Localizations for new ingots.
+
+1.2.1 (MC 1.10.2)
+Added: Cobalt, ardite, and manyullyn to metal parts.
+Changed: Polished wood/stone recipes now take two rows of slabs to make two pieces (wood was conflicting with TCon drying racks)
+
 1.2.0
 Added: Polished wood. It's slightly more durable than vanilla wood with a faster swing speed. Can be crafted from wooden slabs. Comes in oak, birch, spruce, jungle, dark oak, and acacia varieties, as well as a generic "wood" version that can be crafted from any other ore dictionary wooden slabs.
 Added: Polished stone. It's slight more durable than vanilla stone with a slower swing speed. Can be crafted from cobblestone slabs.

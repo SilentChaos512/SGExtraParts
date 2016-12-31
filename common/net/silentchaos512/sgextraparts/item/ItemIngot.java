@@ -49,7 +49,7 @@ public class ItemIngot extends ItemSL {
       public int getColorFromItemstack(ItemStack stack, int tintIndex) {
 
         int meta = stack.getItemDamage();
-        meta = MathHelper.clamp_int(meta, 0, subItemCount - 1);
+        meta = MathHelper.clamp(meta, 0, subItemCount - 1);
         return tintIndex == 0 ? EnumPartMetal.values()[meta].getColor() : 0xFFFFFF;
       }
     }, this);

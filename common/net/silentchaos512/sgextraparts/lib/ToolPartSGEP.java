@@ -55,7 +55,7 @@ public class ToolPartSGEP extends ToolPartMain {
 
     Item item = tool.getItem();
     String name = ((IRegistryObject) item).getName();
-    name = SilentGems.MOD_ID + ":" + name.toLowerCase() + "/" + name;
+    name = SilentGems.MODID + ":" + name.toLowerCase() + "/" + name;
     String num = item instanceof ItemGemBow ? "" : "15";
 
     switch (pos) {

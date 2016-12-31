@@ -15,6 +15,9 @@ item.sgextraparts:Ingot13.name=Invar Ingot
 item.sgextraparts:Ingot14.name=Electrum Ingot
 item.sgextraparts:Ingot15.name=Enderium Ingot
 item.sgextraparts:Ingot16.name=Prismarinium Ingot
+item.sgextraparts:Ingot17.name=Cobalt Ingot
+item.sgextraparts:Ingot18.name=Ardite Ingot
+item.sgextraparts:Ingot19.name=Manyullyn Ingot
 item.sgextraparts:Ingot.desc=This ingot is normally not craftable.
 
 item.sgextraparts:ReinforcedObsidian.name=Reinforced Obsidian
