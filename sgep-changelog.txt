@@ -1,5 +1,6 @@
 1.2.1 (MC 1.11)
 Updated for Silent's Gems 2.2.2
+Changed: Items are now added to the "Silent's Gems: Materials" creative tab.
 Fixed: Polished stone and most types of polished wood not being craftable in some cases.
 Fixed: Some models/textures not loading.
 Fixed: Localizations for new ingots.

@@ -1,5 +1,6 @@
 package net.silentchaos512.sgextraparts.item;
 
+import net.silentchaos512.gems.lib.GemsCreativeTabs;
 import net.silentchaos512.lib.item.ItemSL;
 import net.silentchaos512.lib.registry.SRegistry;
 import net.silentchaos512.sgextraparts.SGExtraParts;
@@ -12,7 +13,7 @@ public class ModItems {
 
   public static void init(SRegistry reg) {
 
-    reg.registerItem(ingot);
-    reg.registerItem(generic);
+    reg.registerItem(ingot).setCreativeTab(GemsCreativeTabs.materials);
+    reg.registerItem(generic).setCreativeTab(GemsCreativeTabs.materials);
   }
 }
