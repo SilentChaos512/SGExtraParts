@@ -18,6 +18,8 @@ item.sgextraparts:Ingot16.name=Prismarinium Ingot
 item.sgextraparts:Ingot17.name=Cobalt Ingot
 item.sgextraparts:Ingot18.name=Ardite Ingot
 item.sgextraparts:Ingot19.name=Manyullyn Ingot
+item.sgextraparts:Ingot20.name=Mithril Ingot
+item.sgextraparts:Ingot21.name=Adamantium Ingot
 item.sgextraparts:Ingot.desc=This ingot is normally not craftable.
 
 item.sgextraparts:ReinforcedObsidian.name=Reinforced Obsidian

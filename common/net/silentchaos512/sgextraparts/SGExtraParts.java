@@ -18,6 +18,7 @@ import net.silentchaos512.sgextraparts.lib.EnumPartBotania;
 import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
 import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
+import net.silentchaos512.sgextraparts.lib.EnumPartNetherrocks;
 import net.silentchaos512.sgextraparts.lib.EnumPartVanillaBasic;
 
 //@formatter:off
@@ -59,8 +60,10 @@ public class SGExtraParts {
     EnumPartExtreme.registerToolParts();
     if (Loader.isModLoaded("ea"))
       EnumPartEbonArts.registerToolParts();
-    if (Loader.isModLoaded("Botania"))
+    if (Loader.isModLoaded("botania"))
       EnumPartBotania.registerToolParts();
+    if (Loader.isModLoaded(EnumPartNetherrocks.MOD_ID))
+      EnumPartNetherrocks.registerToolParts();
 
     proxy.preInit(registry);
   }

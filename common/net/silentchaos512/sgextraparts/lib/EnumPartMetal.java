@@ -15,8 +15,9 @@ import net.silentchaos512.sgextraparts.item.ModItems;
 public enum EnumPartMetal implements IPartProperties {
 
   //@formatter:off
-  COPPER      ("Copper",        EnumMaterialTier.MUNDANE, 0xFF8000,  175,  4.0f,  0.5f,  1.5f, 1.2f, 10, 12, 2.0f),
-  TIN         ("Tin",           EnumMaterialTier.MUNDANE, 0xFFFFCC,  240,  5.0f,  1.0f,  1.0f, 1.0f, 12, 10, 1.0f),
+  //                                                                 DUR   EFF    MEL    MAG   MSPD PRT ENC  CHG
+  COPPER      ("Copper",        EnumMaterialTier.MUNDANE, 0xFF8000,  185,  4.0f,  1.0f,  1.5f, 1.2f, 10, 12, 2.0f),
+  TIN         ("Tin",           EnumMaterialTier.MUNDANE, 0xFFFFCC,  220,  3.5f,  1.0f,  1.0f, 1.0f, 14, 10, 1.0f),
   SILVER      ("Silver",        EnumMaterialTier.REGULAR, 0xD4D4D4,  200,  6.0f,  1.5f,  3.0f, 1.1f, 14, 16, 3.0f),
   LEAD        ("Lead",          EnumMaterialTier.REGULAR, 0xB494D4,  150,  5.0f,  1.0f,  0.5f, 0.8f, 12,  8, 1.0f),
   NICKEL      ("Nickel",        EnumMaterialTier.MUNDANE, 0xFFCC99,  300,  6.5f,  2.5f,  1.5f, 1.1f, 12, 13, 2.0f),
@@ -25,6 +26,7 @@ public enum EnumPartMetal implements IPartProperties {
   ALUMINUM    ("Aluminum",      EnumMaterialTier.REGULAR, 0xFFFFFF,  300,  7.0f,  3.0f,  2.0f, 1.3f, 15, 10, 1.0f),
   ZINC        ("Zinc",          EnumMaterialTier.MUNDANE, 0xDDCCFF,  200,  3.0f,  1.5f,  2.5f, 1.1f, 12, 11, 2.0f),
   TITANIUM    ("Titanium",      EnumMaterialTier.SUPER,   0x2E4CE6, 2400,  8.0f,  6.0f,  2.0f, 1.0f, 24, 12, 1.0f),
+  OSMIUM      ("Osmium",        EnumMaterialTier.REGULAR, 0x92A6B8,  500,  7.0f,  4.0f,  2.0f, 1.2f, 17, 10, 1.0f),
   BRONZE      ("Bronze",        EnumMaterialTier.REGULAR, 0xFF5400,  500,  6.0f,  2.0f,  1.0f, 1.1f, 17, 14, 1.0f),
   BRASS       ("Brass",         EnumMaterialTier.REGULAR, 0xFFAA33,  200,  5.0f,  1.0f,  2.0f, 1.1f, 12, 14, 2.0f),
   STEEL       ("Steel",         EnumMaterialTier.REGULAR, 0x606060, 1000,  8.0f,  4.0f,  2.0f, 0.8f, 20,  9, 1.0f),
@@ -32,9 +34,14 @@ public enum EnumPartMetal implements IPartProperties {
   ELECTRUM    ("Electrum",      EnumMaterialTier.REGULAR, 0xFFFF80,  100, 14.0f,  1.0f,  4.0f, 1.2f, 15, 20, 3.0f),
   ENDERIUM    ("Enderium",      EnumMaterialTier.SUPER,   0x468C75, 2304, 18.0f, 12.0f,  5.0f, 1.0f, 22, 13, 2.0f),
   PRISMARINIUM("Prismarinium",  EnumMaterialTier.SUPER,   0xA6FFD2, 2816, 24.0f,  5.0f, 12.0f, 1.1f, 26, 17, 3.0f),
+  // Tinkers
   COBALT      ("Cobalt",        EnumMaterialTier.SUPER,   0x2577C2, 1152, 14.0f,  5.1f,  4.6f, 1.1f, 20, 15, 3.0f),
   ARDITE      ("Ardite",        EnumMaterialTier.SUPER,   0x931D0B, 1792,  4.5f,  4.6f,  5.1f, 1.0f, 20, 16, 2.0f),
-  MANYULLYN   ("Manyullyn",     EnumMaterialTier.SUPER,   0x903DF8,  896,  9.1f,  9.8f,  6.6f, 1.0f, 24, 17, 3.0f);
+  MANYULLYN   ("Manyullyn",     EnumMaterialTier.SUPER,   0x903DF8,  896,  9.1f,  9.8f,  6.6f, 1.0f, 24, 17, 3.0f),
+  // SimpleOres
+  MITHRIL     ("Mithril",       EnumMaterialTier.REGULAR, 0x167CE0,  800,  8.0f,  3.0f,  7.0f, 1.2f, 15, 12, 2.0f),
+  ADAMANTIUM  ("Adamantium",    EnumMaterialTier.REGULAR, 0x169623, 1150, 14.0f,  7.0f,  3.0f, 1.0f, 19,  3, 1.0f),
+  ;
 
   @Getter final String name;
   @Getter final int color;
