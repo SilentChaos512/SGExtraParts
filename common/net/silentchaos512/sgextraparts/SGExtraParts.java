@@ -15,6 +15,7 @@ import net.silentchaos512.lib.util.LogHelper;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.item.ModItems;
 import net.silentchaos512.sgextraparts.lib.EnumPartBotania;
+import net.silentchaos512.sgextraparts.lib.EnumPartCalculator;
 import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
 import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
@@ -32,7 +33,8 @@ public class SGExtraParts {
   public static final String MOD_ID = "sgextraparts";
   public static final String MOD_NAME = "Silent's Gems: Extra Parts";
   public static final String VERSION = "@VERSION@";
-  public static final String DEPENDENCIES = "required-after:forge@[12.16.1.1904,);required-after:silentgems;";
+  public static final String DEPENDENCIES = "required-after:forge@[12.16.1.1904,);required-after:silentgems;"
+      + "after:botania;after:calculator;after:ea";
   public static final String RESOURCE_PREFIX = MOD_ID+ ":";
 
   public static LogHelper logHelper = new LogHelper(MOD_NAME);
@@ -64,6 +66,8 @@ public class SGExtraParts {
       EnumPartBotania.registerToolParts();
     if (Loader.isModLoaded(EnumPartNetherrocks.MOD_ID))
       EnumPartNetherrocks.registerToolParts();
+    if (Loader.isModLoaded(EnumPartCalculator.MOD_ID))
+      EnumPartCalculator.registerToolParts();
 
     proxy.preInit(registry);
   }

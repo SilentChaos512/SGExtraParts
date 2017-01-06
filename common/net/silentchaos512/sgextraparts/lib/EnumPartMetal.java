@@ -41,6 +41,9 @@ public enum EnumPartMetal implements IPartProperties {
   // SimpleOres
   MITHRIL     ("Mithril",       EnumMaterialTier.REGULAR, 0x167CE0,  800,  8.0f,  3.0f,  7.0f, 1.2f, 15, 12, 2.0f),
   ADAMANTIUM  ("Adamantium",    EnumMaterialTier.REGULAR, 0x169623, 1150, 14.0f,  7.0f,  3.0f, 1.0f, 19,  3, 1.0f),
+  // Fusion
+  THYRIUM     ("Thyrium",       EnumMaterialTier.SUPER,   0x4FAA92, 2000, 22.0f,  6.0f,  8.0f, 1.4f, 20, 28, 2.0f),
+  SINISITE    ("Sinisite",      EnumMaterialTier.SUPER,   0x16167E, 4100, 18.0f,  8.0f,  6.0f, 1.2f, 24, 11, 1.0f),
   ;
 
   @Getter final String name;

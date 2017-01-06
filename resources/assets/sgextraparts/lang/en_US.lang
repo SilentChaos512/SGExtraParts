@@ -48,6 +48,16 @@ part.sgextraparts:Illumenite.name=Illumenite
 part.sgextraparts:Dragonstone.name=Dragonstone
 part.sgextraparts:Argonite.name=Argonite
 
+part.sgextraparts:calc_reinforced_stone.name=Reinforced Stone
+part.sgextraparts:calc_enriched_gold.name=Enriched Gold
+part.sgextraparts:calc_reinforced_iron.name=Reinforced Iron
+part.sgextraparts:calc_redstone.name=Redstone
+part.sgextraparts:calc_weakened_diamond.name=Weakened Diamond
+part.sgextraparts:calc_flawless_diamond.name=Flawless Diamond
+part.sgextraparts:calc_fire_diamond.name=Fire Diamond
+part.sgextraparts:calc_electric_diamond.name=Electric Diamond
+part.sgextraparts:calc_end_diamond.name=End Forged
+
 part.sgextraparts:acacia.name=Acacia
 part.sgextraparts:birch.name=Birch
 part.sgextraparts:dark_oak.name=Dark Oak
