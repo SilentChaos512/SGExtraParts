@@ -1,4 +1,9 @@
-1.2.1 (MC 1.11)
+1.2.3
+Added: SimpleOres parts (mithril and adamantium, added to metals module)
+Added: Osmium (metals module)
+Added: Netherrocks parts (new module)
+
+1.2.2 (MC 1.11)
 Updated for Silent's Gems 2.2.2
 Changed: Items are now added to the "Silent's Gems: Materials" creative tab.
 Fixed: Polished stone and most types of polished wood not being craftable in some cases.
