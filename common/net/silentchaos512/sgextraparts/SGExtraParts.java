@@ -16,6 +16,7 @@ import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.item.ModItems;
 import net.silentchaos512.sgextraparts.lib.EnumPartBotania;
 import net.silentchaos512.sgextraparts.lib.EnumPartCalculator;
+import net.silentchaos512.sgextraparts.lib.EnumPartCavern;
 import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
 import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
@@ -68,6 +69,8 @@ public class SGExtraParts {
       EnumPartNetherrocks.registerToolParts();
     if (Loader.isModLoaded(EnumPartCalculator.MOD_ID))
       EnumPartCalculator.registerToolParts();
+    if (Loader.isModLoaded(EnumPartCavern.MOD_ID))
+      EnumPartCavern.registerToolParts();
 
     proxy.preInit(registry);
   }

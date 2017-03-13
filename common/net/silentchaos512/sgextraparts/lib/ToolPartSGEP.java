@@ -79,7 +79,7 @@ public class ToolPartSGEP extends ToolPartMain {
       return modelMap.get(name);
     }
 
-    ModelResourceLocation model = new ModelResourceLocation(name, "inventory");
+    ModelResourceLocation model = new ModelResourceLocation(name.toLowerCase(), "inventory");
     modelMap.put(name, model);
     return model;
   }
