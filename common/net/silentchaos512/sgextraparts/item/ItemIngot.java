@@ -29,7 +29,7 @@ public class ItemIngot extends ItemSL {
   public List<ModelResourceLocation> getVariants() {
 
     return Lists.newArrayList(
-        new ModelResourceLocation(SGExtraParts.RESOURCE_PREFIX + "Ingot", "inventory"));
+        new ModelResourceLocation(SGExtraParts.RESOURCE_PREFIX + "ingot", "inventory"));
   }
 
   @SideOnly(Side.CLIENT)
