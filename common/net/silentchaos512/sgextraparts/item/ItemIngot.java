@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -39,6 +40,7 @@ public class ItemIngot extends ItemSL {
     ModelResourceLocation model = getVariants().get(0);
     ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
     for (int i = 0; i < subItemCount; ++i) {
+      ModelLoader.registerItemVariants(this, model);
       mesher.register(this, i, model);
     }
 
@@ -49,8 +51,9 @@ public class ItemIngot extends ItemSL {
       public int getColorFromItemstack(ItemStack stack, int tintIndex) {
 
         int meta = stack.getItemDamage();
-        meta = MathHelper.clamp(meta, 0, subItemCount - 1);
-        return tintIndex == 0 ? EnumPartMetal.values()[meta].getColor() : 0xFFFFFF;
+        if (meta < 0 || meta >= EnumPartMetal.values().length || tintIndex != 0)
+          return 0xFFFFFF;
+        return EnumPartMetal.values()[meta].getColor();
       }
     }, this);
 
@@ -68,5 +71,15 @@ public class ItemIngot extends ItemSL {
   public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean advanced) {
 
     list.addAll(SGExtraParts.instance.localizationHelper.getItemDescriptionLines("Ingot"));
+  }
+
+  @Override
+  public String getNameForStack(ItemStack stack) {
+
+    int meta = stack.getItemDamage();
+    if (meta >= 0 && meta < EnumPartMetal.values().length)
+      return "ingot_" + EnumPartMetal.values()[meta].getName().toLowerCase();
+    else
+      return "ingot_unknown";
   }
 }

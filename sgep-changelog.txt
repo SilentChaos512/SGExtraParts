@@ -1,3 +1,8 @@
+1.2.5
+Updated for latest Silent's Gems and Silent Lib
+Added: Parts from the Cavern mod (new module).
+Fixed: Ingot localized names
+
 1.2.4
 Added: Parts from the Calculator mod (new module). End Diamond currently is not unbreakable like in Calculator, but the durability is extremely high.
 Added: Parts from the Fusion mod (to the metals module)

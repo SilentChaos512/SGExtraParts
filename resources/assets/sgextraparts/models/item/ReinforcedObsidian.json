@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "SGExtraParts:items/ReinforcedObsidian"
+    "layer0": "sgextraparts:items/reinforcedobsidian"
   }
 }

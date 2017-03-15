@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "SGExtraParts:items/polished_stone"
+    "layer0": "sgextraparts:items/polished_stone"
   }
 }

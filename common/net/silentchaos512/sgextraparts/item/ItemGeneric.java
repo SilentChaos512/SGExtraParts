@@ -5,11 +5,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.silentchaos512.lib.item.ItemNamedSubtypesSorted;
+import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 
 public class ItemGeneric extends ItemNamedSubtypesSorted {
 
-  public static final String NAME_REINFORCED_OBSIDIAN = "ReinforcedObsidian";
+  public static final String NAME_REINFORCED_OBSIDIAN = "reinforcedobsidian";
   public static final String NAME_POLISHED_WOOD = "polished_wood";
   public static final String NAME_POLISHED_OAK = "polished_oak";
   public static final String NAME_POLISHED_BIRCH = "polished_birch";
@@ -65,8 +66,8 @@ public class ItemGeneric extends ItemNamedSubtypesSorted {
 
   private void addRecipePolishedItem(ItemStack output, Object input) {
 
-    ItemStack result = output.copy();
-    result.setCount(2);
+    ItemStack result = StackHelper.safeCopy(output);
+    StackHelper.setCount(result, 2);
     GameRegistry.addRecipe(new ShapedOreRecipe(result, "www", "www", 'w', input));
   }
 }
