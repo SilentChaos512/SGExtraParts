@@ -1,3 +1,6 @@
+1.2.6
+Added: Soulforged Steel (Better With Mods)
+
 1.2.5
 Updated for latest Silent's Gems and Silent Lib
 Added: Parts from the Cavern mod (new module).
