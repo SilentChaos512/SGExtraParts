@@ -20,7 +20,7 @@ public enum EnumPartNetherrocks implements IPartProperties {
   FYRITE      ("Fyrite",      "ingot", EnumMaterialTier.REGULAR, 0xFF8716, 3,  150,  8.0f, 4.0f, 2.0f, 1.0f, 15,  7, 2.0f),
   MALACHITE   ("Malachite",   "ingot", EnumMaterialTier.REGULAR, 0x00E699, 3,  700,  9.0f, 3.0f, 4.0f, 1.1f, 12, 39, 3.0f),
   ASHSTONE    ("Ashstone",    "gem",   EnumMaterialTier.REGULAR, 0x505352, 3,  900, 16.0f, 2.0f, 2.0f, 0.9f,  8,  7, 1.0f),
-  ILLUMENITE  ("Illuminite",  "ingot", EnumMaterialTier.REGULAR, 0xF5FA9E, 3,  700,  8.0f, 4.0f, 4.0f, 1.5f, 17,  7, 3.0f),
+  ILLUMENITE  ("Illumenite",  "ingot", EnumMaterialTier.REGULAR, 0xF5FA9E, 3,  700,  8.0f, 4.0f, 4.0f, 1.5f, 17,  7, 3.0f),
   DRAGONSTONE ("Dragonstone", "gem",   EnumMaterialTier.SUPER,   0x8C0900, 4, 4000, 10.0f, 8.0f, 6.0f, 1.2f, 22, 18, 1.0f),
   ARGONITE    ("Argonite",    "ingot", EnumMaterialTier.SUPER,   0x3F0087, 3, 1300,  8.0f, 3.0f, 9.0f, 0.8f, 13, 18, 2.0f);
 

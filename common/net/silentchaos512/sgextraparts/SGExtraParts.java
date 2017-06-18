@@ -35,7 +35,7 @@ public class SGExtraParts {
   public static final String MOD_ID = "sgextraparts";
   public static final String MOD_NAME = "Silent's Gems: Extra Parts";
   public static final String VERSION = "@VERSION@";
-  public static final String DEPENDENCIES = "required-after:silentgems;after:botania;after:calculator;after:ea";
+  public static final String DEPENDENCIES = "required-after:silentgems;after:botania;after:calculator;after:ea;after:netherrocks";
   public static final String ACCEPTED_MC_VERSIONS = "[1.10.2,1.11.2]";
   public static final String RESOURCE_PREFIX = MOD_ID + ":";
 

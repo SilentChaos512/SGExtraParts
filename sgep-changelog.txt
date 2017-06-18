@@ -1,5 +1,6 @@
 1.2.6
 Added: Soulforged Steel (Better With Mods)
+Fixed: Issues with Netherrocks parts (#5)
 
 1.2.5
 Updated for latest Silent's Gems and Silent Lib

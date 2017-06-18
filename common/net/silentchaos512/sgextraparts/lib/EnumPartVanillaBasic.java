@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
+import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.item.ModItems;
@@ -99,7 +100,7 @@ public enum EnumPartVanillaBasic implements IPartProperties {
       case OAK: return ModItems.generic.polishedOak;
       case SPRUCE: return ModItems.generic.polishedSpruce;
     } //@formatter:on
-    return null;
+    return StackHelper.empty();
   }
 
   @Override
