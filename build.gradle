@@ -16,7 +16,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //    id "net.minecraftforge.gradle.forge" version "2.0.2"
 //}
 
-version = "1.2.5"
+version = "1.2.6"
 group = "net.silentchaos512.sgextraparts"
 archivesBaseName = "SGExtraParts-1.11.x"
 
@@ -24,13 +24,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 minecraft {
-    version = "1.11-13.19.1.2188"
+    version = "1.11.2-13.20.0.2282"
     runDir = "eclipse"
 
     replace "@VERSION@", project.version
     replaceIn "SGExtraParts.java"
 
-    mappings = "snapshot_20161122"
+    mappings = "snapshot_20161220"
     useDepAts = true
 }
 
