@@ -10,7 +10,7 @@ import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
-import net.silentchaos512.sgextraparts.item.ModItems;
+import net.silentchaos512.sgextraparts.init.ModItems;
 
 public enum EnumPartMetal implements IPartProperties {
 

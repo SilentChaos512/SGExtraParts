@@ -8,9 +8,12 @@ import net.silentchaos512.sgextraparts.SGExtraParts;
 
 public class ConfigExtraParts {
 
+  public static float ROCK_FELDSPAR_PER_CHUNK = 0.6f;
+
   static final String split = Configuration.CATEGORY_SPLITTER;
   public static final String CAT_MAIN = "main";
   public static final String CAT_MODULES = CAT_MAIN + split + "modules";
+  public static final String CAT_WORLD = CAT_MAIN + split + "world";
 
   private static Configuration c;
 
@@ -23,6 +26,9 @@ public class ConfigExtraParts {
   public static void load() {
 
     try {
+      ROCK_FELDSPAR_PER_CHUNK = c.getFloat("Feldspar Per Chunk", CAT_WORLD,
+          ROCK_FELDSPAR_PER_CHUNK, 0f, 10f,
+          "The number of feldspar rocks per chunk on average.");
     } catch (Exception ex) {
     }
   }

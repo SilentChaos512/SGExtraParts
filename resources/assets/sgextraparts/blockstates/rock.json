@@ -1,0 +1,17 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+          "#rockmaterial": "sgextraparts:blocks/feldspar"
+        },
+        "model": "sgextraparts:rock.obj"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{
+            "textures": {
+              "#rockmaterial": "sgextraparts:blocks/feldspar"
+            }
+        }]
+    }
+}

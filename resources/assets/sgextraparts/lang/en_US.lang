@@ -1,3 +1,8 @@
+tile.sgextraparts:rock.name=Feldspar
+
+item.sgextraparts:polisher.name=Polisher
+item.sgextraparts:polisher.desc=Improves some rudimentary materials.
+
 item.sgextraparts:ingot_copper.name=Copper Ingot
 item.sgextraparts:ingot_tin.name=Tin Ingot
 item.sgextraparts:ingot_silver.name=Silver Ingot
@@ -24,7 +29,8 @@ item.sgextraparts:ingot_adamantium.name=Adamantium Ingot
 item.sgextraparts:ingot_thyrium.name=Thyrium Ingot
 item.sgextraparts:ingot_sinisite.name=Sinisite Ingot
 item.sgextraparts:ingot_unknown.name=Unknown Ingot
-item.sgextraparts:ingot.desc=This ingot is normally not craftable.
+item.sgextraparts:ingot.desc1=This ingot is normally not craftable.
+item.sgextraparts:ingot.desc2=Use an ore dictionary equivalent.
 
 item.sgextraparts:reinforcedobsidian.name=Reinforced Obsidian
 item.sgextraparts:polished_wood.name=Polished Wood
@@ -35,6 +41,7 @@ item.sgextraparts:polished_jungle.name=Polished Jungle
 item.sgextraparts:polished_dark_oak.name=Polished Dark Oak
 item.sgextraparts:polished_acacia.name=Polished Acacia
 item.sgextraparts:polished_stone.name=Polished Stone
+item.sgextraparts:feldspar.name=Feldspar
 
 part.sgextraparts:ReinforcedObsidian.name=Obsidian
 part.sgextraparts:ReinforcedObsidian.prefix=Reinforced
@@ -62,6 +69,9 @@ part.sgextraparts:calc_fire_diamond.name=Fire Diamond
 part.sgextraparts:calc_electric_diamond.name=Electric Diamond
 part.sgextraparts:calc_end_diamond.name=End Forged
 
+part.sgextraparts:Magnite.name=Magnite
+part.sgextraparts:Hexcite.name=Hexcite
+
 part.sgextraparts:acacia.name=Acacia
 part.sgextraparts:birch.name=Birch
 part.sgextraparts:dark_oak.name=Dark Oak
@@ -71,3 +81,6 @@ part.sgextraparts:spruce.name=Spruce
 part.sgextraparts:wood.name=Wood
 part.sgextraparts:stone.name=Stone
 part.sgextraparts:polished.prefix=Polished
+
+part.sgextraparts:SoulforgedSteel.name=Soulforged Steel
+part.sgextraparts:feldspar.name=Feldspar

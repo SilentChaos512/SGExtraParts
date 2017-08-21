@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.silentchaos512.lib.item.ItemNamedSubtypesSorted;
+import net.silentchaos512.lib.registry.RecipeMaker;
 import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 
@@ -19,16 +20,15 @@ public class ItemGeneric extends ItemNamedSubtypesSorted {
   public static final String NAME_POLISHED_DARK_OAK = "polished_dark_oak";
   public static final String NAME_POLISHED_ACACIA = "polished_acacia";
   public static final String NAME_POLISHED_STONE = "polished_stone";
+  public static final String NAME_FELDSPAR = "feldspar";
 
   public static final String[] NAMES = {//
-      NAME_REINFORCED_OBSIDIAN, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE,
-      NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA, NAME_POLISHED_DARK_OAK,
-      NAME_POLISHED_STONE };
+      NAME_REINFORCED_OBSIDIAN, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE, NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA,
+      NAME_POLISHED_DARK_OAK, NAME_POLISHED_STONE, NAME_FELDSPAR };
 
   public static final String[] SORTED_NAMES = {//
-      NAME_REINFORCED_OBSIDIAN, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE,
-      NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA, NAME_POLISHED_DARK_OAK,
-      NAME_POLISHED_STONE };
+      NAME_FELDSPAR, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE, NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA,
+      NAME_POLISHED_DARK_OAK, NAME_POLISHED_STONE, NAME_REINFORCED_OBSIDIAN };
 
   public final ItemStack reinforcedObsidian = getStack(NAME_REINFORCED_OBSIDIAN);
   public final ItemStack polishedWood = getStack(NAME_POLISHED_WOOD);
@@ -39,6 +39,7 @@ public class ItemGeneric extends ItemNamedSubtypesSorted {
   public final ItemStack polishedDarkOak = getStack(NAME_POLISHED_DARK_OAK);
   public final ItemStack polishedAcacia = getStack(NAME_POLISHED_ACACIA);
   public final ItemStack polishedStone = getStack(NAME_POLISHED_STONE);
+  public final ItemStack feldspar = getStack(NAME_FELDSPAR);
 
   public ItemGeneric() {
 
@@ -46,28 +47,9 @@ public class ItemGeneric extends ItemNamedSubtypesSorted {
   }
 
   @Override
-  public void addRecipes() {
+  public void addRecipes(RecipeMaker recipes) {
 
-    GameRegistry
-        .addRecipe(new ShapedOreRecipe(reinforcedObsidian, "oco", "coc", "oco", 'o', "obsidian",
-            'c', net.silentchaos512.gems.item.ModItems.craftingMaterial.chaosEssenceEnriched));
-
-    addRecipePolishedItem(polishedOak, new ItemStack(Blocks.WOODEN_SLAB, 1, 0));
-    addRecipePolishedItem(polishedSpruce, new ItemStack(Blocks.WOODEN_SLAB, 1, 1));
-    addRecipePolishedItem(polishedBirch, new ItemStack(Blocks.WOODEN_SLAB, 1, 2));
-    addRecipePolishedItem(polishedJungle, new ItemStack(Blocks.WOODEN_SLAB, 1, 3));
-    addRecipePolishedItem(polishedAcacia, new ItemStack(Blocks.WOODEN_SLAB, 1, 4));
-    addRecipePolishedItem(polishedDarkOak, new ItemStack(Blocks.WOODEN_SLAB, 1, 5));
-
-    addRecipePolishedItem(polishedWood, "slabWood");
-
-    addRecipePolishedItem(polishedStone, new ItemStack(Blocks.STONE_SLAB, 1, 3));
-  }
-
-  private void addRecipePolishedItem(ItemStack output, Object input) {
-
-    ItemStack result = StackHelper.safeCopy(output);
-    StackHelper.setCount(result, 2);
-    GameRegistry.addRecipe(new ShapedOreRecipe(result, "www", "www", 'w', input));
+    recipes.addShapedOre("reinforced_obsidian", reinforcedObsidian, "oco", "coc", "oco", 'o', "obsidian", 'c',
+        net.silentchaos512.gems.init.ModItems.craftingMaterial.chaosEssenceEnriched);
   }
 }

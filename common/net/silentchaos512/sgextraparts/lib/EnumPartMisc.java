@@ -14,11 +14,13 @@ import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
 import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
+import net.silentchaos512.sgextraparts.init.ModItems;
 
 public enum EnumPartMisc implements IPartProperties {
 
   //@formatter:off
-  SOULFORGED_STEEL("betterwithmods", "SoulforgedSteel", "ingot", EnumMaterialTier.SUPER, 0x646464, 3, 1564, 12.0f, 4.0f, 4.0f, 1.0f, 20, 16, 2.0f);
+  SOULFORGED_STEEL("betterwithmods", "SoulforgedSteel", "ingot", EnumMaterialTier.SUPER,   0x646464, 3, 1564, 12.0f, 4.0f, 4.0f, 1.0f, 20, 16, 2.0f),
+  FELDSPAR        ("sgextraparts",   "feldspar",        "",      EnumMaterialTier.MUNDANE, 0xB06F4B, 1,  108,  5.0f, 2.0f, 0.0f, 1.0f, 10, 10, 1.0f);
 
   final String modId;
   final String name;
@@ -59,7 +61,7 @@ public enum EnumPartMisc implements IPartProperties {
   @Override
   public String getName() {
 
-    return SGExtraParts.localizationHelper.getLocalizedString("part", modId + "." + name + ".name");
+    return SGExtraParts.localizationHelper.getLocalizedString("part", name + ".name");
   }
 
   @Override
@@ -74,6 +76,8 @@ public enum EnumPartMisc implements IPartProperties {
     switch (this) {
       case SOULFORGED_STEEL:
         return new ItemStack(Item.getByNameOrId("betterwithmods:material"), 1, 14);
+      case FELDSPAR:
+        return ModItems.generic.feldspar;
       default:
         return StackHelper.empty();
     }
@@ -82,6 +86,8 @@ public enum EnumPartMisc implements IPartProperties {
   @Override
   public String getCraftingOreName() {
 
+    if (orePrefix.isEmpty())
+      return "";
     return orePrefix + name;
   }
 
@@ -89,16 +95,14 @@ public enum EnumPartMisc implements IPartProperties {
 
     List<String> names = Lists.newArrayList();
     for (EnumPartMisc part : values()) {
-      if (Loader.isModLoaded(part.modId)) {
-        names.add(part.modId + "." + part.name.toLowerCase());
-      }
+      names.add(part.modId + "." + part.name.toLowerCase());
     }
 
     boolean[] enabled = ConfigExtraParts.loadPartModule("misc",
         names.toArray(new String[names.size()]), values());
 
     for (EnumPartMisc part : values()) {
-      if (enabled[part.ordinal()]) {
+      if (enabled[part.ordinal()] && Loader.isModLoaded(part.modId)) {
         ToolPartRegistry.putPart(new ToolPartSGEP(part));
       }
     }

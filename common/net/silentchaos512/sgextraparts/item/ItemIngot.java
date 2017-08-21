@@ -1,20 +1,16 @@
 package net.silentchaos512.sgextraparts.item;
 
 import java.util.List;
+import java.util.Map;
 
-import com.google.common.collect.Lists;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.color.IItemColor;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+import net.silentchaos512.gems.SilentGems;
 import net.silentchaos512.lib.item.ItemSL;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
@@ -27,35 +23,19 @@ public class ItemIngot extends ItemSL {
   }
 
   @Override
-  public List<ModelResourceLocation> getVariants() {
+  public void getModels(Map<Integer, ModelResourceLocation> models) {
 
-    return Lists.newArrayList(
-        new ModelResourceLocation(SGExtraParts.RESOURCE_PREFIX + "ingot", "inventory"));
+    models.put(0, new ModelResourceLocation(SGExtraParts.RESOURCE_PREFIX + "ingot", "inventory"));
   }
 
   @SideOnly(Side.CLIENT)
   @Override
   public boolean registerModels() {
 
-    ModelResourceLocation model = getVariants().get(0);
-    ItemModelMesher mesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
+    ModelResourceLocation model = new ModelResourceLocation(SGExtraParts.RESOURCE_PREFIX + "ingot", "inventory");
     for (int i = 0; i < subItemCount; ++i) {
-      ModelLoader.registerItemVariants(this, model);
-      mesher.register(this, i, model);
+      ModelLoader.setCustomModelResourceLocation(this, i, model);
     }
-
-    // Register color handler here for convenience.
-    Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new IItemColor() {
-
-      @Override
-      public int getColorFromItemstack(ItemStack stack, int tintIndex) {
-
-        int meta = stack.getItemDamage();
-        if (meta < 0 || meta >= EnumPartMetal.values().length || tintIndex != 0)
-          return 0xFFFFFF;
-        return EnumPartMetal.values()[meta].getColor();
-      }
-    }, this);
 
     return true;
   }
@@ -68,9 +48,9 @@ public class ItemIngot extends ItemSL {
   }
 
   @Override
-  public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean advanced) {
+  public void clAddInformation(ItemStack stack, World world, List list, boolean advanced) {
 
-    list.addAll(SGExtraParts.instance.localizationHelper.getItemDescriptionLines("Ingot"));
+    list.addAll(SGExtraParts.instance.localizationHelper.getItemDescriptionLines("ingot"));
   }
 
   @Override

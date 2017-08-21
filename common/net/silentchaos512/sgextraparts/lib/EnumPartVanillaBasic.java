@@ -13,7 +13,7 @@ import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
 import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
-import net.silentchaos512.sgextraparts.item.ModItems;
+import net.silentchaos512.sgextraparts.init.ModItems;
 
 public enum EnumPartVanillaBasic implements IPartProperties {
 

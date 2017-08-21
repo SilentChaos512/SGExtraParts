@@ -17,7 +17,7 @@ public enum EnumPartCavern implements IPartProperties {
 
   //@formatter:off
   //                                                       DUR     EFF    MEL    MAG  MSPD PRT ENC   CHG
-  MAGNITE("Magnite", EnumMaterialTier.SUPER, 0x49C0EB, 3,   10, 100.0f, 11.0f,  5.0f, 0.7f, 10, 50, 3.0f),
+  MAGNITE("Magnite", EnumMaterialTier.SUPER, 0xDF3930, 3,   10, 100.0f, 11.0f,  5.0f, 0.7f, 10, 50, 3.0f),
   HEXCITE("Hexcite", EnumMaterialTier.SUPER, 0xFFFFFF, 3, 1041,  10.0f,  5.0f, 11.0f, 1.4f, 24, 15, 1.0f),
   ;
 
