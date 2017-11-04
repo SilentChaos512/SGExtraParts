@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -17,6 +18,16 @@ import net.silentchaos512.lib.registry.SRegistry;
 import net.silentchaos512.lib.util.LocalizationHelper;
 import net.silentchaos512.lib.util.LogHelper;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
+import net.silentchaos512.sgextraparts.lib.EnumPartBotania;
+import net.silentchaos512.sgextraparts.lib.EnumPartCalculator;
+import net.silentchaos512.sgextraparts.lib.EnumPartCavern;
+import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
+import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
+import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
+import net.silentchaos512.sgextraparts.lib.EnumPartMisc;
+import net.silentchaos512.sgextraparts.lib.EnumPartNetherrocks;
+import net.silentchaos512.sgextraparts.lib.EnumPartRodStick;
+import net.silentchaos512.sgextraparts.lib.EnumPartVanillaBasic;
 import net.silentchaos512.sgextraparts.world.WorldGeneratorSGEP;
 
 //@formatter:off
@@ -31,8 +42,8 @@ public class SGExtraParts {
   public static final String MOD_ID = "sgextraparts";
   public static final String MOD_NAME = "Silent's Gems: Extra Parts";
   public static final String VERSION = "@VERSION@";
-  public static final String DEPENDENCIES = "required-after:silentgems;after:botania;after:calculator;after:cavern;after:ea;after:netherrocks";
-  public static final String ACCEPTED_MC_VERSIONS = "[1.10.2,1.12.1]";
+  public static final String DEPENDENCIES = "required-after:silentgems;after:botania;after:calculator;after:cavern;after:ea;after:netherrocks;after:betterwithmods";
+  public static final String ACCEPTED_MC_VERSIONS = "[1.12,1.12.2]";
   public static final String RESOURCE_PREFIX = MOD_ID + ":";
 
   public static LogHelper logHelper = new LogHelper(MOD_NAME);
@@ -46,7 +57,7 @@ public class SGExtraParts {
   public static SGExtraParts instance;
 
   @SidedProxy(clientSide = "net.silentchaos512.sgextraparts.proxy.ClientProxy", serverSide = "net.silentchaos512.sgextraparts.proxy.CommonProxy")
-  public static net.silentchaos512.lib.proxy.CommonProxy proxy;
+  public static net.silentchaos512.sgextraparts.proxy.CommonProxy proxy;
 
   @EventHandler
   public void preInit(FMLPreInitializationEvent event) {

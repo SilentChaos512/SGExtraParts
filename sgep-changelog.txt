@@ -1,3 +1,6 @@
+1.3.3
+Fixed: Models not loading in 1.10.2 and 1.11.2.
+
 1.3.2
 Fixed: Feldspar drop rates (it's supposed to drop 1-2 pieces).
 Fixed: Cascading worldgen issue.

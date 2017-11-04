@@ -9,7 +9,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.SilentGems;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
-import net.silentchaos512.gems.api.lib.EnumPartPosition;
+import net.silentchaos512.gems.api.lib.IPartPosition;
+import net.silentchaos512.gems.api.lib.ToolPartPosition;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartMain;
 import net.silentchaos512.gems.item.tool.ItemGemBow;
@@ -30,7 +31,7 @@ public class ToolPartSGEP extends ToolPartMain {
   }
 
   @Override
-  public int getColor(ItemStack toolOrArmor) {
+  public int getColor(ItemStack toolOrArmor, IPartPosition position, int animationFrame) {
 
     return properties.getColor();
   }
@@ -51,25 +52,21 @@ public class ToolPartSGEP extends ToolPartMain {
   }
 
   @Override
-  public ModelResourceLocation getModel(ItemStack tool, EnumPartPosition pos, int frame) {
+  public ModelResourceLocation getModel(ItemStack tool, ToolPartPosition pos, int frame) {
 
     Item item = tool.getItem();
     String name = ((IRegistryObject) item).getName();
     name = SilentGems.MODID + ":" + name.toLowerCase() + "/" + name;
-    String num = item instanceof ItemGemBow ? "" : "15";
+    boolean isBow = item instanceof ItemGemBow;
+    String num = isBow ? "" : "15";
+    String frameNum = isBow && frame == 3 ? "_3" : "";
 
     switch (pos) {
-      case HEAD_MIDDLE:
-        name += num;
-        break;
-      case HEAD_LEFT:
-        name += num + "L";
-        break;
-      case HEAD_RIGHT:
-        name += num + "R";
+      case HEAD:
+        name += num + frameNum;
         break;
       case ROD_DECO:
-        name += "Deco" + num;
+        name += "_deco";
         break;
       default:
         return null;

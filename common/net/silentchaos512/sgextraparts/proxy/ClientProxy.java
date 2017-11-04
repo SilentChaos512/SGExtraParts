@@ -3,10 +3,12 @@ package net.silentchaos512.sgextraparts.proxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.silentchaos512.lib.registry.SRegistry;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.init.ModItems;
+import net.silentchaos512.sgextraparts.item.ItemStick;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 
 public class ClientProxy extends CommonProxy {
@@ -34,6 +36,16 @@ public class ClientProxy extends CommonProxy {
         return EnumPartMetal.values()[meta].getColor();
       }
     }, ModItems.ingot);
+
+//    Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new IItemColor() {
+//
+//      @Override
+//      public int getColorFromItemstack(ItemStack stack, int tintIndex) {
+//
+//        int meta = MathHelper.clamp(stack.getItemDamage(), 0, ItemStick.Type.values().length);
+//        return ItemStick.Type.values()[meta].color;
+//      }
+//    }, ModItems.stick);
 
     super.init(reg);
     reg.clientInit();

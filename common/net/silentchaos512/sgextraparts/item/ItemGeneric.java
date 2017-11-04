@@ -1,12 +1,8 @@
 package net.silentchaos512.sgextraparts.item;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.silentchaos512.lib.item.ItemNamedSubtypesSorted;
 import net.silentchaos512.lib.registry.RecipeMaker;
-import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 
 public class ItemGeneric extends ItemNamedSubtypesSorted {
@@ -23,12 +19,14 @@ public class ItemGeneric extends ItemNamedSubtypesSorted {
   public static final String NAME_FELDSPAR = "feldspar";
 
   public static final String[] NAMES = {//
-      NAME_REINFORCED_OBSIDIAN, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE, NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA,
-      NAME_POLISHED_DARK_OAK, NAME_POLISHED_STONE, NAME_FELDSPAR };
+      NAME_REINFORCED_OBSIDIAN, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE,
+      NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA, NAME_POLISHED_DARK_OAK,
+      NAME_POLISHED_STONE, NAME_FELDSPAR };
 
   public static final String[] SORTED_NAMES = {//
-      NAME_FELDSPAR, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE, NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA,
-      NAME_POLISHED_DARK_OAK, NAME_POLISHED_STONE, NAME_REINFORCED_OBSIDIAN };
+      NAME_FELDSPAR, NAME_POLISHED_WOOD, NAME_POLISHED_OAK, NAME_POLISHED_SPRUCE,
+      NAME_POLISHED_BIRCH, NAME_POLISHED_JUNGLE, NAME_POLISHED_ACACIA, NAME_POLISHED_DARK_OAK,
+      NAME_POLISHED_STONE, NAME_REINFORCED_OBSIDIAN };
 
   public final ItemStack reinforcedObsidian = getStack(NAME_REINFORCED_OBSIDIAN);
   public final ItemStack polishedWood = getStack(NAME_POLISHED_WOOD);
@@ -49,7 +47,8 @@ public class ItemGeneric extends ItemNamedSubtypesSorted {
   @Override
   public void addRecipes(RecipeMaker recipes) {
 
-    recipes.addShapedOre("reinforced_obsidian", reinforcedObsidian, "oco", "coc", "oco", 'o', "obsidian", 'c',
+    recipes.addShapedOre("reinforced_obsidian", reinforcedObsidian, "oco", "coc", "oco", 'o',
+        "obsidian", 'c',
         net.silentchaos512.gems.init.ModItems.craftingMaterial.chaosEssenceEnriched);
   }
 }

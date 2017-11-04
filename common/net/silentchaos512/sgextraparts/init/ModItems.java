@@ -8,6 +8,7 @@ import net.silentchaos512.lib.registry.SRegistry;
 import net.silentchaos512.sgextraparts.item.ItemGeneric;
 import net.silentchaos512.sgextraparts.item.ItemIngot;
 import net.silentchaos512.sgextraparts.item.ItemPolisher;
+import net.silentchaos512.sgextraparts.item.ItemStick;
 import net.silentchaos512.sgextraparts.lib.EnumPartBotania;
 import net.silentchaos512.sgextraparts.lib.EnumPartCalculator;
 import net.silentchaos512.sgextraparts.lib.EnumPartCavern;
@@ -16,6 +17,7 @@ import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 import net.silentchaos512.sgextraparts.lib.EnumPartMisc;
 import net.silentchaos512.sgextraparts.lib.EnumPartNetherrocks;
+import net.silentchaos512.sgextraparts.lib.EnumPartRodStick;
 import net.silentchaos512.sgextraparts.lib.EnumPartVanillaBasic;
 
 public class ModItems implements IRegistrationHandler<Item> {
@@ -31,6 +33,7 @@ public class ModItems implements IRegistrationHandler<Item> {
     reg.registerItem(ingot).setCreativeTab(GemsCreativeTabs.materials);
     reg.registerItem(generic).setCreativeTab(GemsCreativeTabs.materials);
 
+    // Register tool parts
     EnumPartVanillaBasic.registerToolParts();
     EnumPartMetal.registerToolParts();
     EnumPartExtreme.registerToolParts();

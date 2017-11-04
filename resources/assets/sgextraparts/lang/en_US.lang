@@ -43,6 +43,13 @@ item.sgextraparts:polished_acacia.name=Polished Acacia
 item.sgextraparts:polished_stone.name=Polished Stone
 item.sgextraparts:feldspar.name=Feldspar
 
+item.sgextraparts:stick_acacia.name=Acacia Stick
+item.sgextraparts:stick_birch.name=Birch Stick
+item.sgextraparts:stick_dark_oak.name=Dark Oak Stick
+item.sgextraparts:stick_jungle.name=Jungle Stick
+item.sgextraparts:stick_oak.name=Oak Stick
+item.sgextraparts:stick_spruce.name=Spruce Stick
+
 part.sgextraparts:ReinforcedObsidian.name=Obsidian
 part.sgextraparts:ReinforcedObsidian.prefix=Reinforced
 part.sgextraparts:CrystallizedChaos.name=Crystallized Chaos

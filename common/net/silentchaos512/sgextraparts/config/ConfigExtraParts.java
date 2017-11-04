@@ -4,7 +4,6 @@ import java.io.File;
 
 import net.minecraftforge.common.config.Configuration;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
-import net.silentchaos512.sgextraparts.SGExtraParts;
 
 public class ConfigExtraParts {
 
@@ -41,7 +40,7 @@ public class ConfigExtraParts {
   }
 
   public static boolean[] loadPartModule(String moduleName, String[] keys,
-      IPartProperties[] values) {
+      Object[] values) {
 
     if (keys.length != values.length)
       throw new IllegalArgumentException("keys and values arrays are different lengths!");
