@@ -1,64 +1,74 @@
 package net.silentchaos512.sgextraparts.item;
 
-import java.util.List;
-import java.util.Map;
-
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.color.IItemColor;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-import net.silentchaos512.lib.item.ItemSL;
+import net.silentchaos512.lib.item.IColoredItem;
+import net.silentchaos512.lib.registry.IAddRecipes;
+import net.silentchaos512.lib.registry.ICustomModel;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 
-public class ItemIngot extends ItemSL {
+import java.util.List;
 
-  public ItemIngot() {
-
-    super(EnumPartMetal.values().length, SGExtraParts.MOD_ID, "Ingot");
-  }
-
-  @Override
-  public void getModels(Map<Integer, ModelResourceLocation> models) {
-
-    models.put(0, new ModelResourceLocation(SGExtraParts.RESOURCE_PREFIX + "ingot", "inventory"));
-  }
-
-  @SideOnly(Side.CLIENT)
-  @Override
-  public boolean registerModels() {
-
-    ModelResourceLocation model = new ModelResourceLocation(SGExtraParts.RESOURCE_PREFIX + "ingot", "inventory");
-    for (int i = 0; i < subItemCount; ++i) {
-      ModelLoader.setCustomModelResourceLocation(this, i, model);
+public class ItemIngot extends Item implements IAddRecipes, ICustomModel, IColoredItem {
+    public ItemIngot() {
+        setHasSubtypes(true);
     }
 
-    return true;
-  }
+    @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
+        for (int i = 0; i < EnumPartMetal.values().length; ++i)
+            items.add(new ItemStack(this, 1, i));
+    }
 
-  @Override
-  public void addOreDict() {
+    @Override
+    public void registerModels() {
+        ModelResourceLocation model = new ModelResourceLocation(SGExtraParts.RESOURCE_PREFIX + "ingot", "inventory");
+        for (int i = 0; i < EnumPartMetal.values().length; ++i)
+            ModelLoader.setCustomModelResourceLocation(this, i, model);
+    }
 
-    for (EnumPartMetal metal : EnumPartMetal.values())
-      OreDictionary.registerOre(metal.getCraftingOreName(), metal.getCraftingStack());
-  }
+    @Override
+    public void addOreDict() {
+        for (EnumPartMetal metal : EnumPartMetal.values())
+            OreDictionary.registerOre(metal.getCraftingOreName(), metal.getCraftingStack());
+    }
 
-  @Override
-  public void clAddInformation(ItemStack stack, World world, List list, boolean advanced) {
+    @Override
+    public void addInformation(ItemStack stack, World world, List<String> list, ITooltipFlag flag) {
+        list.add(TextFormatting.ITALIC + SGExtraParts.i18n.subText(this, "desc1"));
+        list.add(TextFormatting.ITALIC + SGExtraParts.i18n.subText(this, "desc2"));
+    }
 
-    list.addAll(SGExtraParts.instance.localizationHelper.getItemDescriptionLines("ingot"));
-  }
+    @Override
+    public String getTranslationKey(ItemStack stack) {
+        return "item." + SGExtraParts.MOD_ID + "." + getNameForStack(stack);
+    }
 
-  @Override
-  public String getNameForStack(ItemStack stack) {
+    private String getNameForStack(ItemStack stack) {
+        int meta = stack.getItemDamage();
+        if (meta >= 0 && meta < EnumPartMetal.values().length)
+            return "ingot_" + EnumPartMetal.values()[meta].getName().toLowerCase();
+        else
+            return "ingot_unknown";
+    }
 
-    int meta = stack.getItemDamage();
-    if (meta >= 0 && meta < EnumPartMetal.values().length)
-      return "ingot_" + EnumPartMetal.values()[meta].getName().toLowerCase();
-    else
-      return "ingot_unknown";
-  }
+    @Override
+    public IItemColor getColorHandler() {
+        return (stack, tintIndex) -> {
+            int meta = stack.getItemDamage();
+            if (meta < 0 || meta >= EnumPartMetal.values().length || tintIndex != 0)
+                return 0xFFFFFF;
+            return EnumPartMetal.values()[meta].getColor();
+        };
+    }
 }

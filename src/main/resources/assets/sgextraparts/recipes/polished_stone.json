@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "sgextraparts:genericitem",
+    "data": 8
+  },
+  "ingredients": [
+    {
+      "item": "sgextraparts:polisher"
+    },
+    {
+      "ore": "cobblestone",
+      "type": "forge:ore_dict"
+    }
+  ],
+  "type": "forge:ore_shapeless"
+}

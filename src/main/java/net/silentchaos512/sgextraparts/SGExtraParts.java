@@ -1,10 +1,5 @@
 package net.silentchaos512.sgextraparts;
 
-import java.util.Random;
-
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -12,80 +7,74 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.silentchaos512.lib.SilentLib;
+import net.silentchaos512.lib.base.IModBase;
 import net.silentchaos512.lib.registry.SRegistry;
-import net.silentchaos512.lib.util.LocalizationHelper;
+import net.silentchaos512.lib.util.I18nHelper;
 import net.silentchaos512.lib.util.LogHelper;
-import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
-import net.silentchaos512.sgextraparts.lib.EnumPartBotania;
-import net.silentchaos512.sgextraparts.lib.EnumPartCalculator;
-import net.silentchaos512.sgextraparts.lib.EnumPartCavern;
-import net.silentchaos512.sgextraparts.lib.EnumPartEbonArts;
-import net.silentchaos512.sgextraparts.lib.EnumPartExtreme;
-import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
-import net.silentchaos512.sgextraparts.lib.EnumPartMisc;
-import net.silentchaos512.sgextraparts.lib.EnumPartNetherrocks;
-import net.silentchaos512.sgextraparts.lib.EnumPartRodStick;
-import net.silentchaos512.sgextraparts.lib.EnumPartVanillaBasic;
-import net.silentchaos512.sgextraparts.world.WorldGeneratorSGEP;
 
-//@formatter:off
+import java.util.Random;
+
 @Mod(modid = SGExtraParts.MOD_ID,
-    name = SGExtraParts.MOD_NAME,
-    version = SGExtraParts.VERSION,
-    dependencies = SGExtraParts.DEPENDENCIES,
-    acceptedMinecraftVersions = SGExtraParts.ACCEPTED_MC_VERSIONS)
-//@formatter:on
-public class SGExtraParts {
+        name = SGExtraParts.MOD_NAME,
+        version = SGExtraParts.VERSION,
+        dependencies = SGExtraParts.DEPENDENCIES,
+        acceptedMinecraftVersions = SGExtraParts.ACCEPTED_MC_VERSIONS)
+public class SGExtraParts implements IModBase {
+    public static final String MOD_ID = "sgextraparts";
+    public static final String MOD_NAME = "Silent's Gems: Extra Parts";
+    public static final String VERSION = "1.4.2";
+    public static final String VERSION_GEMS = "2.7.9";
+    public static final int BUILD_NUM = 0;
+    public static final String DEPENDENCIES = "required-after:silentgems@[" + VERSION_GEMS + ",);" +
+            "after:betterwithmods;after:botania;after:calculator;after:cavern;after:ea;after:netherrocks";
+    public static final String ACCEPTED_MC_VERSIONS = "[1.12,1.12.2]";
+    public static final String RESOURCE_PREFIX = MOD_ID + ":";
 
-  public static final String MOD_ID = "sgextraparts";
-  public static final String MOD_NAME = "Silent's Gems: Extra Parts";
-  public static final String VERSION = "1.4.2";
-  public static final String DEPENDENCIES = "required-after:silentgems;after:botania;after:calculator;after:cavern;after:ea;after:netherrocks;after:betterwithmods";
-  public static final String ACCEPTED_MC_VERSIONS = "[1.12,1.12.2]";
-  public static final String RESOURCE_PREFIX = MOD_ID + ":";
+    public static LogHelper log = new LogHelper(MOD_NAME, BUILD_NUM);
+    public static I18nHelper i18n = new I18nHelper(MOD_ID, log, true);
+    public static SRegistry registry = new SRegistry();
 
-  public static LogHelper logHelper = new LogHelper(MOD_NAME);
-  public static LocalizationHelper localizationHelper;
+    public static Random random = new Random();
 
-  public static SRegistry registry = new SRegistry(MOD_ID);
+    @Instance(MOD_ID)
+    public static SGExtraParts instance;
 
-  public static Random random = new Random();
+    @SidedProxy(clientSide = "net.silentchaos512.sgextraparts.proxy.ClientProxy", serverSide = "net.silentchaos512.sgextraparts.proxy.CommonProxy")
+    public static net.silentchaos512.sgextraparts.proxy.CommonProxy proxy;
 
-  @Instance(MOD_ID)
-  public static SGExtraParts instance;
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+        registry.recipes.setJsonHellMode(0 == getBuildNum());
+        proxy.preInit(registry, event);
+    }
 
-  @SidedProxy(clientSide = "net.silentchaos512.sgextraparts.proxy.ClientProxy", serverSide = "net.silentchaos512.sgextraparts.proxy.CommonProxy")
-  public static net.silentchaos512.sgextraparts.proxy.CommonProxy proxy;
+    @EventHandler
+    public void init(FMLInitializationEvent event) {
+        proxy.init(registry, event);
+    }
 
-  @EventHandler
-  public void preInit(FMLPreInitializationEvent event) {
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        proxy.postInit(registry, event);
+    }
 
-    localizationHelper = new LocalizationHelper(MOD_ID).setReplaceAmpersand(true);
-    SilentLib.instance.registerLocalizationHelperForMod(MOD_ID, localizationHelper);
+    @Override
+    public String getModId() {
+        return MOD_ID;
+    }
 
-    ConfigExtraParts.init(event.getSuggestedConfigurationFile());
+    @Override
+    public String getModName() {
+        return MOD_NAME;
+    }
 
-    registry.addRegistrationHandler(new net.silentchaos512.sgextraparts.init.ModBlocks(), Block.class);
-    registry.addRegistrationHandler(new net.silentchaos512.sgextraparts.init.ModItems(), Item.class);
+    @Override
+    public String getVersion() {
+        return VERSION;
+    }
 
-    GameRegistry.registerWorldGenerator(new WorldGeneratorSGEP(), 0);
-
-    proxy.preInit(registry);
-  }
-
-  @EventHandler
-  public void init(FMLInitializationEvent event) {
-
-    ConfigExtraParts.save();
-
-    proxy.init(registry);
-  }
-
-  @EventHandler
-  public void postInit(FMLPostInitializationEvent event) {
-
-    proxy.postInit(registry);
-  }
+    @Override
+    public int getBuildNum() {
+        return BUILD_NUM;
+    }
 }

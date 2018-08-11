@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "sgextraparts:genericitem",
+    "data": 4
+  },
+  "ingredients": [
+    {
+      "item": "sgextraparts:polisher"
+    },
+    {
+      "item": "minecraft:planks",
+      "data": 2
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

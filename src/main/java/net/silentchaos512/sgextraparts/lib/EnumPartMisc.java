@@ -1,9 +1,6 @@
 package net.silentchaos512.sgextraparts.lib;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
-
 import lombok.Getter;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -15,6 +12,8 @@ import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.init.ModItems;
+
+import java.util.List;
 
 public enum EnumPartMisc implements IPartProperties {
 
@@ -61,7 +60,7 @@ public enum EnumPartMisc implements IPartProperties {
   @Override
   public String getName() {
 
-    return SGExtraParts.localizationHelper.getLocalizedString("part", name + ".name");
+    return SGExtraParts.i18n.translate("part", name + ".name");
   }
 
   @Override

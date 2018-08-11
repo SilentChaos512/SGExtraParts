@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "sgextraparts:genericitem",
+    "data": 0
+  },
+  "pattern": [
+    "oco",
+    "coc",
+    "oco"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "c": {
+      "item": "silentgems:craftingmaterial",
+      "data": 1
+    },
+    "o": {
+      "ore": "obsidian",
+      "type": "forge:ore_dict"
+    }
+  }
+}
