@@ -14,9 +14,9 @@ public class ModItems {
     public static ItemGeneric generic = new ItemGeneric();
 
     public static void registerAll(SRegistry reg) {
-        reg.registerItem(polisher, "polisher").setCreativeTab(GemsCreativeTabs.materials);
-        reg.registerItem(ingot, "ingot").setCreativeTab(GemsCreativeTabs.materials);
-        reg.registerItem(generic, "genericitem").setCreativeTab(GemsCreativeTabs.materials);
+        reg.registerItem(polisher, "polisher").setCreativeTab(GemsCreativeTabs.MATERIALS);
+        reg.registerItem(ingot, "ingot").setCreativeTab(GemsCreativeTabs.MATERIALS);
+        reg.registerItem(generic, "genericitem").setCreativeTab(GemsCreativeTabs.MATERIALS);
 
         // Register tool parts
         EnumPartVanillaBasic.registerToolParts();

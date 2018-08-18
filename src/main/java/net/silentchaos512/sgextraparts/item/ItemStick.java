@@ -1,17 +1,15 @@
 package net.silentchaos512.sgextraparts.item;
 
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import net.silentchaos512.lib.item.ItemSL;
+import net.silentchaos512.lib.registry.IAddRecipes;
 import net.silentchaos512.lib.registry.RecipeMaker;
-import net.silentchaos512.sgextraparts.SGExtraParts;
 
-import java.util.Map;
-
-public class ItemStick extends ItemSL {
+// This class extended ItemSL before. If implemented, missing methods will need to be added.
+public class ItemStick extends Item implements IAddRecipes {
     public enum Type {
         OAK(0xBC9862, new ItemStack(Blocks.PLANKS, 1, 0)),
         SPRUCE(0x664F2F, new ItemStack(Blocks.PLANKS, 1, 1)),
@@ -31,7 +29,6 @@ public class ItemStick extends ItemSL {
     }
 
     public ItemStick() {
-        super(Type.values().length, SGExtraParts.MOD_ID, "stick");
     }
 
     @Override
@@ -51,20 +48,20 @@ public class ItemStick extends ItemSL {
         }
     }
 
-    @Override
-    public void getModels(Map<Integer, ModelResourceLocation> models) {
-        ModelResourceLocation modelLocation = new ModelResourceLocation(
-                SGExtraParts.RESOURCE_PREFIX + "stick", "inventory");
-        for (Type type : Type.values()) {
-            models.put(type.ordinal(), modelLocation);
-        }
-    }
-
-    @Override
-    public String getNameForStack(ItemStack stack) {
-        int meta = stack.getItemDamage();
-        if (meta >= 0 && meta < Type.values().length)
-            return "stick_" + Type.values()[meta].name().toLowerCase();
-        return super.getNameForStack(stack);
-    }
+//    @Override
+//    public void getModels(Map<Integer, ModelResourceLocation> models) {
+//        ModelResourceLocation modelLocation = new ModelResourceLocation(
+//                SGExtraParts.RESOURCE_PREFIX + "stick", "inventory");
+//        for (Type type : Type.values()) {
+//            models.put(type.ordinal(), modelLocation);
+//        }
+//    }
+//
+//    @Override
+//    public String getNameForStack(ItemStack stack) {
+//        int meta = stack.getItemDamage();
+//        if (meta >= 0 && meta < Type.values().length)
+//            return "stick_" + Type.values()[meta].name().toLowerCase();
+//        return super.getNameForStack(stack);
+//    }
 }

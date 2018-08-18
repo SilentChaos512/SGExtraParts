@@ -1,16 +1,15 @@
 package net.silentchaos512.sgextraparts.world;
 
-import java.util.Random;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.silentchaos512.gems.lib.EnumGem;
 import net.silentchaos512.lib.world.WorldGeneratorSL;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.init.ModBlocks;
+
+import java.util.Random;
 
 public class WorldGeneratorSGEP extends WorldGeneratorSL {
 
@@ -22,7 +21,7 @@ public class WorldGeneratorSGEP extends WorldGeneratorSL {
   @Override
   protected void generateSurface(World world, Random random, int posX, int posZ) {
 
-    int i, x, y, z, meta;
+    int i, x, y, z;
     IBlockState state;
     BlockPos pos;
 
@@ -37,8 +36,6 @@ public class WorldGeneratorSGEP extends WorldGeneratorSL {
       z = posZ + 8 + random.nextInt(16);
       pos = new BlockPos(x, y, z);
 
-      meta = random.nextInt(16);
-      EnumGem gem = EnumGem.values()[meta];
       state = ModBlocks.rock.getDefaultState();
 
       // Find top-most valid block

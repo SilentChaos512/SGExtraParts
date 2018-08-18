@@ -6,7 +6,6 @@ import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
-import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.init.ModItems;
@@ -98,7 +97,7 @@ public enum EnumPartVanillaBasic implements IPartProperties {
       case OAK: return ModItems.generic.polishedOak;
       case SPRUCE: return ModItems.generic.polishedSpruce;
     } //@formatter:on
-    return StackHelper.empty();
+    return ItemStack.EMPTY;
   }
 
   @Override
@@ -114,7 +113,7 @@ public enum EnumPartVanillaBasic implements IPartProperties {
       names.add(part.name.toLowerCase());
 
     boolean[] enabled = ConfigExtraParts.loadPartModule("vanilla_basic",
-        names.toArray(new String[names.size()]), values());
+        names.toArray(new String[0]), values());
 
     for (EnumPartVanillaBasic part : values())
       if (enabled[part.ordinal()])

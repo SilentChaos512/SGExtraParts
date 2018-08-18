@@ -91,7 +91,7 @@ public enum EnumPartNetherrocks implements IPartProperties {
       names.add(part.name.toLowerCase());
 
     boolean[] enabled = ConfigExtraParts.loadPartModule(MOD_ID,
-        names.toArray(new String[names.size()]), values());
+        names.toArray(new String[0]), values());
 
     for (EnumPartNetherrocks part : values())
       if (enabled[part.ordinal()])

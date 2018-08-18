@@ -1,14 +1,12 @@
 package net.silentchaos512.sgextraparts.lib;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
-import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
-import net.silentchaos512.sgextraparts.init.ModItems;
 import net.silentchaos512.sgextraparts.item.ItemStick;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public enum EnumPartRodStick {
 
@@ -42,7 +40,7 @@ public enum EnumPartRodStick {
 
   public ItemStack getCraftingStack() {
 
-    return StackHelper.empty();
+    return ItemStack.EMPTY;
     //return new ItemStack(ModItems.stick, 1, ordinal());
   }
 
@@ -53,7 +51,7 @@ public enum EnumPartRodStick {
       names.add(part.name().toLowerCase());
 
     boolean[] enabled = ConfigExtraParts.loadPartModule("rods",
-        names.toArray(new String[names.size()]), values());
+        names.toArray(new String[0]), values());
 
     for (EnumPartRodStick part : values()) {
       if (enabled[part.ordinal()]) {

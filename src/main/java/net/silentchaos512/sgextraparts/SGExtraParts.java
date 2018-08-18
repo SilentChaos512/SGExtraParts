@@ -1,5 +1,6 @@
 package net.silentchaos512.sgextraparts;
 
+import mcp.MethodsReturnNonnullByDefault;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -19,6 +20,8 @@ import java.util.Random;
         version = SGExtraParts.VERSION,
         dependencies = SGExtraParts.DEPENDENCIES,
         acceptedMinecraftVersions = SGExtraParts.ACCEPTED_MC_VERSIONS)
+@MethodsReturnNonnullByDefault
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class SGExtraParts implements IModBase {
     public static final String MOD_ID = "sgextraparts";
     public static final String MOD_NAME = "Silent's Gems: Extra Parts";
@@ -44,7 +47,8 @@ public class SGExtraParts implements IModBase {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        registry.recipes.setJsonHellMode(0 == getBuildNum());
+        registry.setMod(this);
+        registry.getRecipeMaker().setJsonHellMode(0 == getBuildNum());
         proxy.preInit(registry, event);
     }
 

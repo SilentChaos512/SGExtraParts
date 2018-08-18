@@ -114,7 +114,7 @@ public enum EnumPartMetal implements IPartProperties {
       names.add(part.name.toLowerCase());
 
     boolean[] enabled = ConfigExtraParts.loadPartModule("metals",
-        names.toArray(new String[names.size()]), values());
+        names.toArray(new String[0]), values());
 
     for (EnumPartMetal metal : values()) {
       if (enabled[metal.ordinal()])

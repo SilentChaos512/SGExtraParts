@@ -1,9 +1,6 @@
 package net.silentchaos512.sgextraparts.lib;
 
-import java.util.Map;
-
 import com.google.common.collect.Maps;
-
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -14,8 +11,9 @@ import net.silentchaos512.gems.api.lib.ToolPartPosition;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartMain;
 import net.silentchaos512.gems.item.tool.ItemGemBow;
-import net.silentchaos512.lib.registry.IRegistryObject;
 import net.silentchaos512.sgextraparts.SGExtraParts;
+
+import java.util.Map;
 
 public class ToolPartSGEP extends ToolPartMain {
 
@@ -55,7 +53,7 @@ public class ToolPartSGEP extends ToolPartMain {
   public ModelResourceLocation getModel(ItemStack tool, ToolPartPosition pos, int frame) {
 
     Item item = tool.getItem();
-    String name = ((IRegistryObject) item).getName();
+    String name = item.getRegistryName().getPath();
     name = SilentGems.MODID + ":" + name.toLowerCase() + "/" + name;
     boolean isBow = item instanceof ItemGemBow;
     String num = isBow ? "" : "15";

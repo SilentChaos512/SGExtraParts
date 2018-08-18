@@ -86,7 +86,7 @@ public enum EnumPartEbonArts implements IPartProperties {
       names.add(part.name.toLowerCase());
 
     boolean[] enabled = ConfigExtraParts.loadPartModule("ebon_arts",
-        names.toArray(new String[names.size()]), values());
+        names.toArray(new String[0]), values());
 
     for (EnumPartEbonArts prop : values())
       if (enabled[prop.ordinal()])

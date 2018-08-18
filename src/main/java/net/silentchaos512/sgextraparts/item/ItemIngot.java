@@ -26,6 +26,7 @@ public class ItemIngot extends Item implements IAddRecipes, ICustomModel, IColor
 
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
+        if (!isInCreativeTab(tab)) return;
         for (int i = 0; i < EnumPartMetal.values().length; ++i)
             items.add(new ItemStack(this, 1, i));
     }

@@ -8,7 +8,6 @@ import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.lib.IPartPosition;
 import net.silentchaos512.gems.api.lib.ToolPartPosition;
 import net.silentchaos512.gems.api.tool.part.ToolPartRod;
-import net.silentchaos512.lib.registry.IRegistryObject;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 
 public class ToolPartRodSGEP extends ToolPartRod {
@@ -35,7 +34,7 @@ public class ToolPartRodSGEP extends ToolPartRod {
   public ModelResourceLocation getModel(ItemStack toolOrArmor, ToolPartPosition pos, int frame) {
 
     Item item = toolOrArmor.getItem();
-    String name = ((IRegistryObject) item).getName();
+    String name = item.getRegistryName().getPath();
     name = SilentGems.MODID + ":" + name.toLowerCase() + "/" + name + "_rod_generic";
     return new ModelResourceLocation(name.toLowerCase(), "inventory");
   }

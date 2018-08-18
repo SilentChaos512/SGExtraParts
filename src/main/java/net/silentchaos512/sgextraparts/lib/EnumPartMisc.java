@@ -8,7 +8,6 @@ import net.minecraftforge.fml.common.Loader;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
-import net.silentchaos512.lib.util.StackHelper;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.init.ModItems;
@@ -78,7 +77,7 @@ public enum EnumPartMisc implements IPartProperties {
       case FELDSPAR:
         return ModItems.generic.feldspar;
       default:
-        return StackHelper.empty();
+        return ItemStack.EMPTY;
     }
   }
 
@@ -98,7 +97,7 @@ public enum EnumPartMisc implements IPartProperties {
     }
 
     boolean[] enabled = ConfigExtraParts.loadPartModule("misc",
-        names.toArray(new String[names.size()]), values());
+        names.toArray(new String[0]), values());
 
     for (EnumPartMisc part : values()) {
       if (enabled[part.ordinal()] && Loader.isModLoaded(part.modId)) {
