@@ -18,6 +18,7 @@ import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.lib.EnumPartMetal;
 
 import java.util.List;
+import java.util.Locale;
 
 public class ItemIngot extends Item implements IAddRecipes, ICustomModel, IColoredItem {
     public ItemIngot() {
@@ -58,7 +59,7 @@ public class ItemIngot extends Item implements IAddRecipes, ICustomModel, IColor
     private String getNameForStack(ItemStack stack) {
         int meta = stack.getItemDamage();
         if (meta >= 0 && meta < EnumPartMetal.values().length)
-            return "ingot_" + EnumPartMetal.values()[meta].getName().toLowerCase();
+            return "ingot_" + EnumPartMetal.values()[meta].name().toLowerCase(Locale.ROOT);
         else
             return "ingot_unknown";
     }

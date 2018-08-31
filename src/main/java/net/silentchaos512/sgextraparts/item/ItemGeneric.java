@@ -61,6 +61,7 @@ public class ItemGeneric extends Item implements IAddRecipes, ICustomModel {
 
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
+        if (!this.isInCreativeTab(tab)) return;
         for (String name : SORTED_NAMES) {
             items.add(getStack(name));
         }
