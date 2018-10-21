@@ -14,16 +14,13 @@ import net.silentchaos512.sgextraparts.init.ModBlocks;
 import net.silentchaos512.sgextraparts.init.ModItems;
 import net.silentchaos512.sgextraparts.world.WorldGeneratorSGEP;
 
-import java.util.function.Consumer;
-
 public class CommonProxy implements IProxy {
     @Override
     public void preInit(SRegistry registry, FMLPreInitializationEvent event) {
         ConfigExtraParts.init(event.getSuggestedConfigurationFile());
 
-        // The casts stop a deprecation warning, but it works either way
-        registry.addRegistrationHandler((Consumer<SRegistry>) ModBlocks::registerAll, Block.class);
-        registry.addRegistrationHandler((Consumer<SRegistry>) ModItems::registerAll, Item.class);
+        registry.addRegistrationHandler(ModBlocks::registerAll, Block.class);
+        registry.addRegistrationHandler(ModItems::registerAll, Item.class);
 
         GameRegistry.registerWorldGenerator(new WorldGeneratorSGEP(), 0);
 

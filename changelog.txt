@@ -1,3 +1,9 @@
+1.4.6
+Fixed: Tool parts with missing crafting items (sometimes crash) when installed with Expanded Arcanum (Silent's Gems #344)
+
+1.4.5
+Fix for latest Silent's Gems
+
 1.4.4
 Fixed: Some items in wrong creative tabs (#11)
 

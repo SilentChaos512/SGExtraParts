@@ -23,8 +23,9 @@ public class ModItems {
         EnumPartMetal.registerToolParts();
         EnumPartExtreme.registerToolParts();
         EnumPartMisc.registerToolParts();
-        if (Loader.isModLoaded("ea"))
-            EnumPartEbonArts.registerToolParts();
+        // Confict: Expanded Arcanum uses the same mod ID... Just disable since Ebon Arts is no more
+//        if (Loader.isModLoaded("ea"))
+//            EnumPartEbonArts.registerToolParts();
         if (Loader.isModLoaded("botania"))
             EnumPartBotania.registerToolParts();
         if (Loader.isModLoaded(EnumPartNetherrocks.MOD_ID))
