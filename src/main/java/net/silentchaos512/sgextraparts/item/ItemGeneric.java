@@ -4,6 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.silentchaos512.gems.item.CraftingItems;
 import net.silentchaos512.lib.registry.IAddRecipes;
 import net.silentchaos512.lib.registry.ICustomModel;
 import net.silentchaos512.lib.registry.RecipeMaker;
@@ -79,7 +80,7 @@ public class ItemGeneric extends Item implements IAddRecipes, ICustomModel {
     public void addRecipes(RecipeMaker recipes) {
         recipes.addShapedOre("reinforced_obsidian", reinforcedObsidian, "oco", "coc", "oco", 'o',
                 "obsidian", 'c',
-                net.silentchaos512.gems.init.ModItems.craftingMaterial.chaosEssenceEnriched);
+                CraftingItems.ENRICHED_CHAOS_ESSENCE.getStack());
     }
 
     @Override

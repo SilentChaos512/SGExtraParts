@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.silentchaos512.gems.api.lib.EnumMaterialTier;
 import net.silentchaos512.gems.api.tool.part.IPartProperties;
 import net.silentchaos512.gems.api.tool.part.ToolPartRegistry;
+import net.silentchaos512.gems.item.CraftingItems;
 import net.silentchaos512.sgextraparts.SGExtraParts;
 import net.silentchaos512.sgextraparts.config.ConfigExtraParts;
 import net.silentchaos512.sgextraparts.init.ModItems;
@@ -67,7 +68,7 @@ public enum EnumPartExtreme implements IPartProperties {
 
     switch (this) {
       case CRYSTALLIZED_CHAOS:
-        return net.silentchaos512.gems.init.ModItems.craftingMaterial.chaosEssenceCrystallized;
+        return CraftingItems.CRYSTALLIZED_CHAOS_ESSENCE.getStack();
       case REINFORCED_OBSIDIAN:
         return ModItems.generic.reinforcedObsidian;
     }

@@ -25,8 +25,8 @@ import java.util.Random;
 public class SGExtraParts implements IModBase {
     public static final String MOD_ID = "sgextraparts";
     public static final String MOD_NAME = "Silent's Gems: Extra Parts";
-    public static final String VERSION = "1.4.4";
-    public static final String VERSION_GEMS = "2.8.1";
+    public static final String VERSION = "1.4.5";
+    public static final String VERSION_GEMS = "2.8.3";
     public static final int BUILD_NUM = 0;
     public static final String DEPENDENCIES = "required-after:silentgems@[" + VERSION_GEMS + ",);" +
             "after:betterwithmods;after:botania;after:calculator;after:cavern;after:ea;after:netherrocks";
